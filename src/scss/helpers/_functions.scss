@@ -1,0 +1,16 @@
+/**
+*
+* 		Functions
+*			- SASS functions should go in here
+*
+**/
+
+@each $key, $value in $colors {
+    .bg#{$key} {
+        background: $value;
+    }
+
+    .color#{$key} {
+        color: $value;
+    }
+}

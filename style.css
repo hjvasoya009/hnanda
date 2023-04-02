@@ -1,0 +1,34 @@
+/*
+	Theme Name: H. Nanda
+	Theme URI: https://hiteshrinanda.com/
+	Description: A Fully Customized Wordpress Template for: Hiteshri Nanda
+	Version: 1.0
+	Author: Hardik Vasoya
+	Author URI: 
+	Tags:
+*/
+
+
+@font-face {
+  font-family: "MortModern Large";
+  src: url("./assets/fonts/MortModern-01LargeLight.otf") format('opentype');
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "MortModern Text";
+  src: url("./assets/fonts/MortModern-23TextLight.otf") format('opentype');
+  font-weight: 330;
+}
+
+@font-face {
+  font-family: "TradeGothicLTStd";
+  src: url("./assets/fonts/TradeGothicLTStd-BdCn20.otf") format('opentype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "MyriadPro";
+  src: url("./assets/fonts/MyriadPro-Regular.otf") format('opentype');
+  font-weight: 400;
+}

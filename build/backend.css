@@ -1,0 +1,109 @@
+/* LOGIN CSS FILE */
+/* ----------------------------------------- */
+/**
+*
+* 		LOGIN: Colony Digital
+*			- The "Login" page branded for Colony
+*
+**/
+.login {
+  background: #000; }
+  .login h1 a {
+    width: 100%;
+    height: 52px;
+    background: url("http://colonydigital.ca/images/logos/colony-landing.png") center center no-repeat; }
+  .login form,
+  .login .message {
+    border-radius: 5px; }
+  .login #nav {
+    float: left;
+    padding: 0;
+    margin: 10px 0 0; }
+  .login #backtoblog {
+    float: right;
+    padding: 0;
+    margin: 10px 0 0; }
+
+/* EDITOR CSS FILE */
+/* ----------------------------------------- */
+/**
+*
+* 		CONFIG
+*			- Site Config styles for the site
+*
+**/
+/**
+*
+* 		MIXINS
+*			- Any kind of SCSS Mixins should go in here
+*
+**/
+/**
+*
+* 		Functions
+*			- SASS functions should go in here
+*
+**/
+.bgdark {
+  background: #000000; }
+
+.colordark {
+  color: #000000; }
+
+.bggray-light {
+  background: #f5f5f5; }
+
+.colorgray-light {
+  color: #f5f5f5; }
+
+.bggray-dark {
+  background: #404042; }
+
+.colorgray-dark {
+  color: #404042; }
+
+.bgwhite {
+  background: #ffffff; }
+
+.colorwhite {
+  color: #ffffff; }
+
+.bgblack {
+  background: #000000; }
+
+.colorblack {
+  color: #000000; }
+
+/**
+*
+* 		HELPERS
+*			- Any kind of SCSS Helper should go in this file
+*
+**/
+.text-center {
+  text-align: center; }
+
+.text-right {
+  text-align: right; }
+
+.text-left {
+  text-align: left; }
+
+/**
+*
+* 		DEFAULT
+*			- Links the Article page to the Wordpress Editor
+*
+**/
+/**
+*
+* 		ARTICLE
+*			- Note: The Editor styles are pulled from this,
+*			- This is using ".article" so you can specify where the editable content would go.
+*
+**/
+body#tinymce {
+  background-image: none; }
+
+
+/*# sourceMappingURL=backend.css.map*/

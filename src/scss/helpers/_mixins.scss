@@ -1,0 +1,90 @@
+/**
+*
+* 		MIXINS
+*			- Any kind of SCSS Mixins should go in here
+*
+**/
+
+// FLEXBOX
+
+@mixin flex-row($justify, $align) {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin flex-col($justify, $align) {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin dissapear {
+  visibility: hidden;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+  display: block;
+}
+
+@mixin inputReset {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+@mixin fullwidthwrapper($color) {
+  position: absolute;
+  height: 100%;
+  width: 100vw;
+  background: map-get($colors, $color);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0 map-get($layout, "no-margin");
+  z-index: 0;
+
+  @include breakpoint(1000px) {
+    margin: 0 map-get($layout, "no-margin-mobile");
+  }
+}
+
+@mixin indentContainer($col) {
+  margin-left: span($col);
+  margin-right: span($col);
+
+  @include breakpoint(tablet) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@mixin maxWidth($col) {
+  max-width: span($col);
+
+  @include breakpoint(tablet) {
+    max-width: 100%;
+  }
+}
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}

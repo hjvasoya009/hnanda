@@ -1,0 +1,19 @@
+/**
+*
+* 		BUTTONS
+*			- Add any button styles in here.
+* 			- Below is grouped into a buttons list but the .button is also accessible directly
+*
+**/
+
+
+//Single Button
+.button {
+	transition: 0.5s;
+
+	//Small Button
+	&.small {}
+
+	//Large Button
+	&.large {}
+}

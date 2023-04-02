@@ -1,0 +1,56 @@
+/**
+*
+* 		CONFIG
+*			- Site Config styles for the site
+*
+**/
+
+
+//Fonts
+$fonts: (
+  "mainfont": ("MortModern Text",
+    sans-serif,
+  ),
+  "bold": ("TradeGothicLTStd",
+    sans-serif,
+  ),
+  "mainfont-light":("MortModern Large", serif),
+  "additionalfont":("MyriadPro", serif)
+);
+
+//Layout
+$layout: (
+  "margin": 0,
+  "margin-mobile": 0,
+  "max-width": 1440px,
+  "gutter": 20px,
+  "grid-max": 10,
+  "no-margin": -80px,
+  "no-margin-mobile": -25px,
+  "header-height": 135px,
+  "header-height-mobile": 56px,
+);
+
+//Colors
+$colors: (
+  "dark": #000000,
+  "gray-light": #f5f5f5,
+  "gray-dark": #404042,
+  "white": #ffffff,
+  "black": #000000,
+);
+
+//Primary Styles
+$primary: (
+  font-weight: 400,
+  line-height: 1.33,
+  font-family: map-get($fonts, "mainfont"),
+  overflow-x: hidden,
+  background: #fff,
+  -webkit-font-smoothing: antialiased,
+  -moz-osx-font-smoothing: grayscale,
+  -webkit-text-size-adjust: 100%,
+  -ms-text-size-adjust: 100%,
+);
+
+$max-width: 1300px;

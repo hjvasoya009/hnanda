@@ -1,0 +1,41 @@
+/**
+*
+* 		LOGIN: Colony Digital
+*			- The "Login" page branded for Colony
+*
+**/
+$active: true;
+
+@if $active {
+
+	.login {
+
+		background:#000;
+
+		h1 a {
+			width:100%;
+			height:52px;
+			background: url('http://colonydigital.ca/images/logos/colony-landing.png') center center no-repeat;
+		}
+
+		form,
+		.message {
+			border-radius:5px;
+		}
+
+
+		#nav {
+			float:left;
+			padding:0;
+			margin:10px 0 0;
+		}
+
+		#backtoblog {
+			float:right;
+			padding:0;
+			margin:10px 0 0;
+		}
+
+	}
+
+}

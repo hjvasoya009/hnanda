@@ -1,0 +1,22 @@
+/**
+	*
+	* 		FORMS
+	*			- Form Styles should go in here
+	*
+	**/
+
+input,
+select {
+	border: none;
+	border-bottom: 1px solid rgba(64, 64, 66, 0.5);
+	height: 33px;
+	box-sizing: border-box;
+
+	@include breakpoint(800px) {
+		height: 60px;
+	}
+}
+
+select {
+	border-bottom: 1px solid map-get($colors, 'gray-dark');
+}
