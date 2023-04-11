@@ -27,7 +27,7 @@ span {
 
 h1,
 .h1 {
-  font-family: map-get($fonts, "heading");
+  font-family: map-get($fonts, "mainfont");
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
@@ -78,7 +78,7 @@ h2,
   }
 
   &.highlight {
-    font-family: map-get($fonts, "heading");
+    font-family: map-get($fonts, "mainfont");
     font-weight: 700;
     font-size: 84px;
     line-height: 83px;
@@ -124,7 +124,7 @@ h4,
 h6,
 .h6,
 .eyebrow {
-  font-family: map-get($fonts, "bold");
+  font-family: map-get($fonts, "mainfont");
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -145,7 +145,7 @@ input,
 select,
 option,
 textarea {
-  font-family: map-get($fonts, "bold");
+  font-family: map-get($fonts, "mainfont");
 }
 
 p,
@@ -217,7 +217,7 @@ a {
   }
 
   &.button {
-    font-family: map-get($fonts, "bold");
+    font-family: map-get($fonts, "mainfont");
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
@@ -237,7 +237,7 @@ a {
   }
 
   &.underline {
-    font-family: map-get($fonts, "bold");
+    font-family: map-get($fonts, "mainfont");
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
@@ -257,7 +257,7 @@ a {
 
 span {
   &.underline {
-    font-family: map-get($fonts, "bold");
+    font-family: map-get($fonts, "mainfont");
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
@@ -294,6 +294,7 @@ span {
     }
 
     &:hover {
+
       a,
       span {
         opacity: 1 !important;
@@ -302,7 +303,7 @@ span {
 
     a,
     span {
-      font-family: map-get($fonts, "bold");
+      font-family: map-get($fonts, "mainfont");
     }
 
     a,
@@ -342,6 +343,7 @@ span {
     }
 
     &:hover {
+
       a,
       span {
         opacity: 1 !important;
@@ -350,7 +352,7 @@ span {
 
     a,
     span {
-      font-family: map-get($fonts, "bold");
+      font-family: map-get($fonts, "mainfont");
     }
 
     a,

@@ -1,1 +1,153 @@
-.home {}
+.home {
+    position: relative;
+
+    .intro {
+        position: relative;
+        top: -48px;
+        max-width: 522px;
+        margin-bottom: 48px;
+
+        p {
+            font-family: map-get($fonts, "primaryfont");
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 40px;
+
+            span {
+                font-style: italic;
+                font-family: map-get($fonts, "secondaryfont");
+            }
+        }
+    }
+
+    .projects {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 32px;
+
+        @include breakpoint(sm) {
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 64px;
+        }
+
+        @include breakpoint(lg) {
+            grid-gap: 130px;
+        }
+    }
+
+    .project {
+        min-height: 580px;
+        padding: 48px 32px;
+        background: #F6BC9B;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+
+        @include breakpoint(lg) {
+            min-height: 794px;
+            padding: 90px 72px;
+        }
+
+        &:nth-of-type(even) {
+            position: relative;
+
+            @include breakpoint(lg) {
+                top: -180px;
+            }
+        }
+
+        &-title {
+            font-style: italic;
+            font-family: map-get($fonts, "secondaryfont");
+            font-size: 32px;
+            line-height: 48px;
+
+            @include breakpoint(lg) {
+                font-size: 54px;
+                line-height: 68px;
+            }
+        }
+
+        &-meta {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            grid-gap: 42px;
+
+            &--heading {
+                font-weight: 400;
+            }
+
+            &--content {
+                font-weight: 300;
+            }
+        }
+
+        &-cta {
+            text-align: center;
+
+            a {
+                color: black;
+                font-family: map-get($fonts, "primaryfont");
+                font-weight: 300;
+                font-size: 24px;
+                line-height: 36px;
+                text-transform: lowercase;
+                display: inline-block;
+                text-decoration: underline;
+
+                &:hover {
+                    font-family: map-get($fonts, "secondaryfont");
+                    font-weight: 400;
+                    font-style: italic;
+                }
+            }
+        }
+    }
+
+    .bg-overlay {
+        position: absolute;
+        bottom: 0;
+        top: 40%;
+        width: 100%;
+        background: url('../assets/images/purple-bg.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -9;
+    }
+
+    .footer {
+        &__content {
+
+            &-contact {
+
+                .tagline {
+                    color: white;
+
+                    span {
+                        font-style: italic;
+                    }
+                }
+
+                .email {
+                    color: white;
+
+                    a {
+                        color: white;
+                    }
+                }
+            }
+
+            &-nav {
+                color: white;
+
+                .nav {
+
+                    a {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}

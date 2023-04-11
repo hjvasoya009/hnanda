@@ -2,17 +2,78 @@
 *
 * 		Footer
 *     
-*     1. Desktop
-*     2. Random Breakpoints
-*     3. Tablet
-*     4. Mobile
 *
 **/
 
-footer#footer {
-	.footer {
-		&__container {}
+.footer {
+	padding-top: 200px;
 
-		&__content {}
+	&__container {}
+
+	&__content {
+		&-icons {
+			padding-bottom: 130px;
+
+			p {
+				text-align: center;
+				font-size: 36px;
+				line-height: 36px;
+			}
+		}
+
+		&-contact {
+			padding-bottom: 170px;
+
+			.tagline {
+				text-align: center;
+				font-family: map-get($fonts, "secondaryfont");
+				font-size: 48px;
+				line-height: 60px;
+				padding-bottom: 24px;
+
+				@include breakpoint(lg) {
+					font-size: 63px;
+					line-height: 80px;
+				}
+
+				span {
+					font-style: italic;
+				}
+			}
+
+			.email {
+				text-align: center;
+				font-size: 48px;
+				line-height: 60px;
+				font-weight: 300;
+
+				@include breakpoint(lg) {
+					font-size: 63px;
+					line-height: 80px;
+				}
+
+				a {
+					font-weight: 400;
+					font-size: 22px;
+					text-transform: uppercase;
+					color: black;
+				}
+			}
+		}
+
+		&-nav {
+			display: flex;
+			justify-content: space-between;
+			padding-bottom: 24px;
+
+			.nav {
+				display: flex;
+				grid-gap: 24px;
+
+				a {
+					color: black;
+				}
+			}
+		}
 	}
 }

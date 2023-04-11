@@ -102,8 +102,9 @@ module.exports = {
         use: {
           loader: "file-loader",
           options: {
-            name: 'images/[name].[ext]',
-            outputPath: 'images'
+            name: '[name].[ext]',
+            outputPath: 'assets/images',
+            esModule: false
           }
         }
       }

@@ -3,10 +3,46 @@
 * 		Header
 *			- The header styles will go hehre
 *     
-*     1. Desktop
-*     2. Random Breakpoints
-*     3. Tablet
 *
 **/
 
-// 1. Desktop
+.header {
+    .navbar {
+        &-wrapper {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 48px;
+            margin-bottom: 48px;
+        }
+
+        &-menu {
+            .menu-primary {
+                text-align: right;
+                display: flex;
+                flex-direction: column;
+                grid-gap: 16px;
+
+                li {
+                    a {
+                        text-transform: lowercase;
+                        font-family: map-get($fonts, "primaryfont");
+                        color: map-get($colors, "black");
+                        font-weight: 300;
+                        font-size: 28px;
+                        line-height: 32px;
+                    }
+
+                    &.current-menu-item,
+                    &:hover {
+                        a {
+                            font-family: map-get($fonts, "secondaryfont");
+                            font-weight: 400;
+                            font-style: italic;
+                            border-bottom: 2px solid map-get($colors, "black");
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

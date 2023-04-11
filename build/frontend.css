@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Xanh+Mono:ital@0;1&display=swap);
 /* MAIN CSS FILE */
 /* ----------------------------------------- */
 [data-aos][data-aos][data-aos-duration="50"],
@@ -1281,7 +1282,7 @@ html {
 body {
   font-weight: 400;
   line-height: 1.33;
-  font-family: "MortModern Text", sans-serif;
+  font-family: "Roboto", sans-serif;
   overflow-x: hidden;
   background: #fff;
   -webkit-font-smoothing: antialiased;
@@ -1301,7 +1302,7 @@ section {
 
 .image--parallax-container {
   overflow: hidden; }
-  @media only screen and (max-width: 1024px) {
+  @media only screen and (max-width: tablet) {
     .image--parallax-container {
       overflow: inherit; } }
 
@@ -1332,9 +1333,15 @@ a.btn {
     border: 1px solid; }
 
 .max-width {
-  max-width: 1300px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 20px; }
+  @media only screen and (min-width: 768px) {
+    .max-width {
+      padding: 0 40px; } }
+  @media only screen and (min-width: 1224px) {
+    .max-width {
+      padding: 0 60px; } }
 
 /*!
  * Bootstrap Grid v4.3.1 (https://getbootstrap.com/)
@@ -4584,11 +4591,7 @@ html {
           transform: translateY(0); }
 
 main {
-  margin-top: 135px;
   min-height: 100vh; }
-  @media only screen and (max-width: 1200px) {
-    main {
-      margin-top: 56px; } }
 
 /**
 *
@@ -4636,6 +4639,7 @@ span {
 
 h1,
 .h1 {
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
@@ -4643,7 +4647,7 @@ h1,
   margin: 0;
   font-stretch: 50%;
   color: #000000; }
-  @media only screen and (min-width: 1800px) {
+  @media only screen and (max-width: lgdesktop) {
     h1,
     .h1 {
       font-size: 44px;
@@ -4671,7 +4675,7 @@ h1,
 
 h2,
 .h2 {
-  font-family: "MortModern Text", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
@@ -4685,11 +4689,12 @@ h2,
       line-height: 23px; } }
   h2.highlight,
   .h2.highlight {
+    font-family: "Roboto", sans-serif;
     font-weight: 700;
     font-size: 84px;
     line-height: 83px;
     letter-spacing: -0.02em; }
-    @media only screen and (max-width: 640px) {
+    @media only screen and (max-width: smmobile) {
       h2.highlight,
       .h2.highlight {
         font-weight: bold;
@@ -4700,7 +4705,7 @@ h2,
 
 h3,
 .h3 {
-  font-family: "MortModern Text", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -4710,7 +4715,7 @@ h3,
 
 h4,
 .h4 {
-  font-family: "MortModern Text", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 25px;
@@ -4725,7 +4730,7 @@ h4,
 h6,
 .h6,
 .eyebrow {
-  font-family: "TradeGothicLTStd", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -4737,14 +4742,14 @@ h6,
 
 p,
 .body {
-  font-family: "MortModern Text", sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #000000; }
 
 input,
 select,
 option,
 textarea {
-  font-family: "TradeGothicLTStd", sans-serif; }
+  font-family: "Roboto", sans-serif; }
 
 p,
 input,
@@ -4792,7 +4797,7 @@ p a {
     transition: color 250ms ease; }
 
 a {
-  font-family: "MortModern Text", sans-serif; }
+  font-family: "Roboto", sans-serif; }
   a.primary {
     font-style: normal;
     font-weight: 500;
@@ -4816,7 +4821,7 @@ a {
       transition: opacity 500ms ease;
       opacity: 0.5; }
   a.button {
-    font-family: "TradeGothicLTStd", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
@@ -4831,7 +4836,7 @@ a {
     line-height: 26px;
     letter-spacing: 0.03em; }
   a.underline {
-    font-family: "TradeGothicLTStd", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
@@ -4849,7 +4854,7 @@ a {
       opacity: 0.5; }
 
 span.underline {
-  font-family: "TradeGothicLTStd", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -4867,7 +4872,7 @@ span.underline {
     opacity: 0.5; }
 
 .gform_title {
-  font-family: "MortModern Text", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 25px;
@@ -4884,7 +4889,7 @@ span.underline {
 
 .underline--animation a,
 .underline--animation span {
-  font-family: "TradeGothicLTStd", sans-serif; }
+  font-family: "Roboto", sans-serif; }
 
 .underline--animation a,
 .underline--animation span,
@@ -4929,7 +4934,7 @@ span.underline {
 
 .underline--transition a,
 .underline--transition span {
-  font-family: "TradeGothicLTStd", sans-serif; }
+  font-family: "Roboto", sans-serif; }
 
 .underline--transition a,
 .underline--transition span,
@@ -4976,12 +4981,60 @@ span.underline {
 *
 * 		Footer
 *     
-*     1. Desktop
-*     2. Random Breakpoints
-*     3. Tablet
-*     4. Mobile
 *
 **/
+.footer {
+  padding-top: 200px; }
+  .footer__content-icons {
+    padding-bottom: 130px; }
+    .footer__content-icons p {
+      text-align: center;
+      font-size: 36px;
+      line-height: 36px; }
+  .footer__content-contact {
+    padding-bottom: 170px; }
+    .footer__content-contact .tagline {
+      text-align: center;
+      font-family: "Xanh Mono", monospace;
+      font-size: 48px;
+      line-height: 60px;
+      padding-bottom: 24px; }
+      @media only screen and (min-width: 1224px) {
+        .footer__content-contact .tagline {
+          font-size: 63px;
+          line-height: 80px; } }
+      .footer__content-contact .tagline span {
+        font-style: italic; }
+    .footer__content-contact .email {
+      text-align: center;
+      font-size: 48px;
+      line-height: 60px;
+      font-weight: 300; }
+      @media only screen and (min-width: 1224px) {
+        .footer__content-contact .email {
+          font-size: 63px;
+          line-height: 80px; } }
+      .footer__content-contact .email a {
+        font-weight: 400;
+        font-size: 22px;
+        text-transform: uppercase;
+        color: black; }
+  .footer__content-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-bottom: 24px; }
+    .footer__content-nav .nav {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      grid-gap: 24px; }
+      .footer__content-nav .nav a {
+        color: black; }
+
 /**
 	*
 	* 		FORMS
@@ -5008,11 +5061,40 @@ select {
 * 		Header
 *			- The header styles will go hehre
 *     
-*     1. Desktop
-*     2. Random Breakpoints
-*     3. Tablet
 *
 **/
+.header .navbar-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 48px;
+  margin-bottom: 48px; }
+
+.header .navbar-menu .menu-primary {
+  text-align: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  grid-gap: 16px; }
+  .header .navbar-menu .menu-primary li a {
+    text-transform: lowercase;
+    color: #000000;
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 32px; }
+  .header .navbar-menu .menu-primary li.current-menu-item a, .header .navbar-menu .menu-primary li:hover a {
+    font-family: "Xanh Mono", monospace;
+    font-weight: 400;
+    font-style: italic;
+    border-bottom: 2px solid #000000; }
+
 /**
 *
 * 		NAVIGATION
@@ -5036,6 +5118,117 @@ select {
 	*			- 404 Page Styles should go here
 	*
 	**/
+.home {
+  position: relative; }
+  .home .intro {
+    position: relative;
+    top: -48px;
+    max-width: 522px;
+    margin-bottom: 48px; }
+    .home .intro p {
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 40px; }
+      .home .intro p span {
+        font-style: italic;
+        font-family: "Xanh Mono", monospace; }
+  .home .projects {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    grid-gap: 32px; }
+    @media only screen and (min-width: 768px) {
+      .home .projects {
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 64px; } }
+    @media only screen and (min-width: 1224px) {
+      .home .projects {
+        grid-gap: 130px; } }
+  .home .project {
+    min-height: 580px;
+    padding: 48px 32px;
+    background: #F6BC9B;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    @media only screen and (min-width: 1224px) {
+      .home .project {
+        min-height: 794px;
+        padding: 90px 72px; } }
+    .home .project:nth-of-type(even) {
+      position: relative; }
+      @media only screen and (min-width: 1224px) {
+        .home .project:nth-of-type(even) {
+          top: -180px; } }
+    .home .project-title {
+      font-style: italic;
+      font-family: "Xanh Mono", monospace;
+      font-size: 32px;
+      line-height: 48px; }
+      @media only screen and (min-width: 1224px) {
+        .home .project-title {
+          font-size: 54px;
+          line-height: 68px; } }
+    .home .project-meta {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      grid-gap: 42px; }
+      .home .project-meta--heading {
+        font-weight: 400; }
+      .home .project-meta--content {
+        font-weight: 300; }
+    .home .project-cta {
+      text-align: center; }
+      .home .project-cta a {
+        color: black;
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 36px;
+        text-transform: lowercase;
+        display: inline-block;
+        text-decoration: underline; }
+        .home .project-cta a:hover {
+          font-family: "Xanh Mono", monospace;
+          font-weight: 400;
+          font-style: italic; }
+  .home .bg-overlay {
+    position: absolute;
+    bottom: 0;
+    top: 40%;
+    width: 100%;
+    background: url(assets/images/purple-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -9; }
+  .home .footer__content-contact .tagline {
+    color: white; }
+    .home .footer__content-contact .tagline span {
+      font-style: italic; }
+  .home .footer__content-contact .email {
+    color: white; }
+    .home .footer__content-contact .email a {
+      color: white; }
+  .home .footer__content-nav {
+    color: white; }
+    .home .footer__content-nav .nav a {
+      color: white; }
 
 
 /*# sourceMappingURL=frontend.css.map*/

@@ -27,4 +27,6 @@
 
 </head>
 
-<body <?php body_class(); ?>>
+<body id="top" <?php body_class(); ?>>
+
+	<?php get_template_part('templates/partials/global', 'nav'); ?>
