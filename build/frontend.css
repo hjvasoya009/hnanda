@@ -5118,6 +5118,85 @@ select {
 	*			- 404 Page Styles should go here
 	*
 	**/
+.page__about p {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 36px; }
+
+.page__about .about-bg {
+  position: relative;
+  padding-bottom: 130px;
+  margin-top: -50px; }
+  .page__about .about-bg .bg-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 40%;
+    width: 100%;
+    background: url(assets/images/cream-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -9; }
+
+.page__about .about-content {
+  margin-top: 40px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 80px; }
+  .page__about .about-content .content p {
+    margin-bottom: 24px; }
+
+.page__about .gallery {
+  padding-top: 200px;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 24px;
+  margin-bottom: 56px; }
+
+.page__about .interests-expertise {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 24px; }
+  .page__about .interests-expertise h3 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 12px; }
+  .page__about .interests-expertise p {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 36px; }
+
+.page__about .clients {
+  margin-top: 148px; }
+  .page__about .clients-header {
+    margin-bottom: 48px; }
+    .page__about .clients-header h2 {
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 36px;
+      margin-bottom: 20px; }
+  .page__about .clients-list {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[7];
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 20px; }
+    .page__about .clients-list img {
+      border: 0.2px solid #949494;
+      border-radius: 5px; }
+
 .home {
   position: relative; }
   .home .intro {
