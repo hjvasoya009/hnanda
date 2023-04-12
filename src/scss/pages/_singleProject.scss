@@ -1,0 +1,130 @@
+.single-projects {
+    .footer {
+        padding-top: 96px;
+
+        &__content {
+
+            &-icons,
+            &-contact {
+                display: none;
+            }
+        }
+    }
+
+    .single-project-page {
+        &--wrapper {
+            max-width: 1220px;
+
+            p {
+                font-weight: 300;
+                font-size: 22px;
+                line-height: 36px;
+
+                strong {
+                    font-weight: 400;
+                }
+            }
+
+            .tabs {
+                max-width: 910px;
+                margin: 0 auto;
+                margin-top: 40px;
+
+                &-wrapper {
+                    background: white;
+                    position: sticky;
+                    top: 0;
+                    z-index: 9;
+                }
+
+                ul {
+                    display: flex;
+                    justify-content: space-between;
+
+                    li {
+                        a {
+                            font-weight: 300;
+                            font-size: 24px;
+                            line-height: 45px;
+                            color: black;
+                        }
+
+                        &.active {
+                            a {
+                                font-weight: 500;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .the-brief {
+                margin-top: 48px;
+
+                &-header {
+                    h3 {
+                        font-weight: 700;
+                        font-size: 28px;
+                        line-height: 36px;
+                        margin-bottom: 24px;
+                    }
+                }
+
+                &-meta {
+                    margin-bottom: 60px;
+                    margin-top: 60px;
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    grid-gap: 16px;
+                    max-width: 900px;
+
+                    h4 {
+                        font-weight: 600;
+                        font-size: 22px;
+                        line-height: 36px;
+                        margin-bottom: 8px;
+                    }
+
+                    span {
+                        font-weight: 300;
+                        font-size: 18px;
+                        line-height: 25px;
+                    }
+                }
+
+                &-thumbnail {
+                    margin-bottom: 60px;
+                }
+
+                &-content {
+                    p {
+                        margin-bottom: 24px;
+
+                        strong {
+                            display: block;
+                        }
+                    }
+                }
+            }
+
+            #research,
+            #problem,
+            #final-design,
+            #user-testing,
+            #takeaways {
+                margin-bottom: 60px;
+            }
+
+            .page-nav {
+                text-align: right;
+                margin-top: 200px;
+
+                &--wrapper {
+                    display: flex;
+                    justify-content: flex-end;
+                    grid-gap: 24px;
+                }
+            }
+        }
+    }
+}

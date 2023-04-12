@@ -29,11 +29,7 @@ get_header();
                     foreach ($projects as $post) {
                         // Setup this post for WP functions (variable must be named $post).
                         setup_postdata($post);
-                        // echo "<pre>";
-                        // print_r($post);
-                        // echo "</pre>";
                 ?>
-
                         <div class="project">
                             <h2 class="project-title"><?= get_field('project_title'); ?> ✨</h2>
 

@@ -1,0 +1,54 @@
+.page-template-template-process {
+    .footer {
+        padding-top: 96px;
+    }
+
+    .footer__content {
+
+        &-icons,
+        &-contact {
+            display: none;
+        }
+    }
+
+    main {
+        min-height: 60vh;
+    }
+}
+
+.page__process {
+    max-width: 992px;
+    margin: 0 auto;
+    text-align: center;
+
+    h2 {
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 61px;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+    }
+
+
+    p {
+        font-weight: 300;
+        font-size: 32px;
+        line-height: 34px;
+    }
+
+    h3 {
+        font-weight: 300;
+        font-size: 32px;
+        line-height: 34px;
+        margin-top: 72px;
+
+        a {
+            font-weight: 300;
+            font-size: 32px;
+            line-height: 34px;
+            text-decoration: underline;
+            color: black;
+        }
+    }
+}

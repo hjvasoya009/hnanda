@@ -216,16 +216,16 @@ a {
     }
   }
 
-  &.button {
-    font-family: map-get($fonts, "mainfont");
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 15px;
-    text-align: center;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-  }
+  // &.button {
+  //   font-family: map-get($fonts, "mainfont");
+  //   font-style: normal;
+  //   font-weight: 500;
+  //   font-size: 12px;
+  //   line-height: 15px;
+  //   text-align: center;
+  //   letter-spacing: 0.06em;
+  //   text-transform: uppercase;
+  // }
 
   &.footer,
   &.footer_menu_2 {
