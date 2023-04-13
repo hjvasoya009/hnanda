@@ -34,6 +34,7 @@ get_header();
         }
         ?>
 
+        <!-- The Brief -->
         <div id="the-brief" class="the-brief tab-section">
             <div class="the-brief-header">
                 <h3><?= get_field("brief_title") ?></h3>
