@@ -15,6 +15,8 @@ get_header();
     </div>
 
     <div class="max-width single-project-page--wrapper">
+
+        <!-- Tabs -->
         <?php
         if (get_field("show_tab_bar") == true) {
         ?>
