@@ -31,28 +31,44 @@
         }
 
         @include breakpoint(lg) {
-            grid-gap: 130px;
+            grid-gap: 96px;
         }
     }
 
     .project {
-        min-height: 580px;
-        padding: 48px 32px;
-        background: #F6BC9B;
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-
-        @include breakpoint(lg) {
-            min-height: 794px;
-            padding: 90px 72px;
-        }
+        border-radius: 5px;
+        transition: 0.4s;
+        background-size: cover;
+        background-position: center;
 
         &:nth-of-type(even) {
             position: relative;
 
             @include breakpoint(lg) {
                 top: -180px;
+            }
+        }
+
+        &--inner {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            opacity: 0;
+            min-height: 580px;
+            padding: 48px 32px;
+
+            @include breakpoint(lg) {
+                min-height: 712px;
+                padding: 80px;
+            }
+        }
+
+        &:hover {
+            background-image: unset !important;
+            background: #F6BC9B;
+
+            .project--inner {
+                opacity: 1;
             }
         }
 
@@ -63,7 +79,7 @@
             line-height: 48px;
 
             @include breakpoint(lg) {
-                font-size: 54px;
+                font-size: 50px;
                 line-height: 68px;
             }
         }
@@ -72,7 +88,22 @@
             display: flex;
             justify-content: space-between;
             flex-direction: column;
-            grid-gap: 42px;
+            grid-gap: 40px;
+
+            &-content {
+                display: flex;
+                grid-gap: 8px;
+                align-items: flex-start;
+
+                img {
+                    margin-top: 4px;
+                }
+            }
+
+            p {
+                font-size: 24px;
+                line-height: 36px;
+            }
 
             &--heading {
                 font-weight: 400;
@@ -108,7 +139,7 @@
     .bg-overlay {
         position: absolute;
         bottom: 0;
-        top: 40%;
+        top: 50%;
         width: 100%;
         background: url('../assets/images/purple-bg.png');
         background-repeat: no-repeat;
@@ -124,8 +155,10 @@
                 .tagline {
                     color: white;
 
-                    span {
-                        font-style: italic;
+                    #word-switcher {
+                        label {
+                            border-bottom: 2px solid #fff;
+                        }
                     }
                 }
 
@@ -140,6 +173,10 @@
 
             &-nav {
                 color: white;
+
+                &--wrapper {
+                    background: transparent;
+                }
 
                 .nav {
 

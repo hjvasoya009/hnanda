@@ -31,9 +31,15 @@
             grid-template-columns: 1fr 1fr;
             grid-gap: 80px;
 
+            .profile-picture {
+                max-width: 600px;
+            }
+
             .content {
                 p {
                     margin-bottom: 24px;
+                    font-size: 18px;
+                    line-height: 33px;
                 }
             }
         }

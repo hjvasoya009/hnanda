@@ -28,8 +28,11 @@
         letter-spacing: 0.03em;
         text-transform: uppercase;
         margin-bottom: 16px;
+        display: flex;
+        grid-gap: 20px;
+        justify-content: center;
+        align-items: center;
     }
-
 
     p {
         font-weight: 300;
@@ -39,16 +42,24 @@
 
     h3 {
         font-weight: 300;
-        font-size: 32px;
+        font-size: 22px;
         line-height: 34px;
         margin-top: 72px;
 
         a {
             font-weight: 300;
-            font-size: 32px;
+            font-size: 22px;
             line-height: 34px;
-            text-decoration: underline;
+            text-decoration: none;
+            border-bottom: 1px solid black;
             color: black;
+
+            &:hover {
+                font-weight: 400;
+                font-family: map-get($fonts, "secondaryfont");
+                font-style: italic;
+                border-bottom: 1px solid black;
+            }
         }
     }
 }

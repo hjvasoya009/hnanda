@@ -39,7 +39,7 @@ get_header();
         <!-- The Brief -->
         <div id="the-brief" class="the-brief tab-section">
             <div class="the-brief-header">
-                <h3 class="title"><?= get_field("brief_title") ?></h3>
+                <h3><?= get_field("brief_title") ?></h3>
                 <p><?= get_field("brief_description") ?></p>
             </div>
 

@@ -30,54 +30,55 @@ get_header();
                         // Setup this post for WP functions (variable must be named $post).
                         setup_postdata($post);
                 ?>
-                        <div class="project">
-                            <h2 class="project-title"><?= get_field('project_title'); ?> ✨</h2>
-
-                            <div class="project-meta">
-                                <?php
-                                if (get_field('about_excerpt') != '') {
-                                ?>
-                                    <div class="project-meta-content">
-                                        <p>
-                                            <span class="project-meta--heading">About:</span>
-                                            <span class="project-meta--content"><?= get_field('about_excerpt'); ?></span>
-                                        </p>
-                                    </div>
-                                <?php
-                                }
-                                ?>
-
-                                <?php
-                                if (get_field('tools_excerpt') != '') {
-                                ?>
-                                    <div class="project-meta-content">
-                                        <p>
-                                            <span class="project-meta--heading">Tools:</span>
-                                            <span class="project-meta--content"><?= get_field('tools_excerpt'); ?></span>
-                                        </p>
-                                    </div>
-                                <?php
-                                }
-                                ?>
-
-                                <?php
-                                if (get_field('tasks_excerpt') != '') {
-                                ?>
-                                    <div class="project-meta-content">
-                                        <p>
-                                            <span class="project-meta--heading">Tasks:</span>
-                                            <span class="project-meta--content"><?= get_field('tasks_excerpt'); ?></span>
-                                        </p>
-                                    </div>
-                                <?php
-                                }
-                                ?>
-                            </div>
-
-                            <div class="project-cta">
-                                <a href="/projects/<?= $post->post_name; ?>" class="view-project">
-                                    <span>view project</span>
-                                </a>
+                        <div class="project" style='<?= (get_field('thumbnail')) ? "background-image: url(" . get_field('thumbnail')['url'] . ")" : "background: #F6BC9B;" ?>'>
+                            <div class="project--inner">
+                                <h2 class="project-title"><?= get_field('project_title'); ?> ✨</h2>
+                                <div class="project-meta">
+                                    <?php
+                                    if (get_field('about_excerpt') != '') {
+                                    ?>
+                                        <div class="project-meta-content">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-laptop.svg" alt="About">
+                                            <p>
+                                                <span class="project-meta--heading">About:</span>
+                                                <span class="project-meta--content"><?= get_field('about_excerpt'); ?></span>
+                                            </p>
+                                        </div>
+                                    <?php
+                                    }
+                                    ?>
+                                    <?php
+                                    if (get_field('tools_excerpt') != '') {
+                                    ?>
+                                        <div class="project-meta-content">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-tools.svg" alt="Tools">
+                                            <p>
+                                                <span class="project-meta--heading">Tools:</span>
+                                                <span class="project-meta--content"><?= get_field('tools_excerpt'); ?></span>
+                                            </p>
+                                        </div>
+                                    <?php
+                                    }
+                                    ?>
+                                    <?php
+                                    if (get_field('tasks_excerpt') != '') {
+                                    ?>
+                                        <div class="project-meta-content">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-tasks.svg" alt="Tasks">
+                                            <p>
+                                                <span class="project-meta--heading">Tasks:</span>
+                                                <span class="project-meta--content"><?= get_field('tasks_excerpt'); ?></span>
+                                            </p>
+                                        </div>
+                                    <?php
+                                    }
+                                    ?>
+                                </div>
+                                <div class="project-cta">
+                                    <a href="/projects/<?= $post->post_name; ?>" class="view-project">
+                                        <span>view project</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                 <?php

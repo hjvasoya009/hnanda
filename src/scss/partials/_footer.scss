@@ -36,8 +36,23 @@
 					line-height: 80px;
 				}
 
-				span {
+				#word-switcher {
 					font-style: italic;
+
+					position: relative;
+					padding-right: 230px;
+
+					label {
+						border-bottom: 2px solid #000;
+
+						position: absolute;
+						opacity: 0;
+
+						&.active {
+							opacity: 1;
+							animation: fade 2s ease-in-out infinite;
+						}
+					}
 				}
 			}
 
@@ -55,8 +70,16 @@
 				a {
 					font-weight: 400;
 					font-size: 22px;
+					line-height: 48px;
 					text-transform: uppercase;
 					color: black;
+					letter-spacing: 0.12em;
+					position: relative;
+					padding: 0 20px;
+					top: -32px;
+					text-decoration: none;
+					display: inline-block;
+					border-bottom: 2px solid;
 				}
 			}
 		}
@@ -64,7 +87,12 @@
 		&-nav {
 			display: flex;
 			justify-content: space-between;
-			padding-bottom: 24px;
+			align-items: center;
+			height: 50px;
+
+			&--wrapper {
+				background: #A18CBB;
+			}
 
 			.nav {
 				display: flex;
@@ -75,5 +103,28 @@
 				}
 			}
 		}
+	}
+}
+
+
+@keyframes fade {
+	0% {
+		opacity: 0;
+		transform: translateY(-50%);
+	}
+
+	25% {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+
+	75% {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateY(50%);
 	}
 }

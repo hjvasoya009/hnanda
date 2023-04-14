@@ -15,12 +15,30 @@
             padding-bottom: 48px;
         }
 
+        &-logo {
+            svg {
+                path {
+                    fill: black;
+                    transition: 0.3s;
+                }
+            }
+
+            &:hover {
+                svg {
+                    path {
+                        fill: #A18CBB;
+                    }
+                }
+            }
+        }
+
         &-menu {
             .menu-primary {
                 text-align: right;
                 display: flex;
                 flex-direction: column;
                 grid-gap: 16px;
+                min-width: 150px;
 
                 li {
                     a {
@@ -30,6 +48,19 @@
                         font-weight: 300;
                         font-size: 28px;
                         line-height: 32px;
+                        display: flex;
+                        grid-gap: 12px;
+                        justify-content: end;
+
+                        span {
+                            &:first-of-type {
+                                border-bottom: 2px solid transparent;
+                            }
+
+                            &:last-of-type {
+                                display: none;
+                            }
+                        }
                     }
 
                     &.current-menu-item,
@@ -37,8 +68,17 @@
                         a {
                             font-family: map-get($fonts, "secondaryfont");
                             font-weight: 400;
-                            font-style: italic;
-                            border-bottom: 2px solid map-get($colors, "black");
+
+                            span {
+                                &:first-of-type {
+                                    border-bottom-color: map-get($colors, "black");
+                                    font-style: italic;
+                                }
+
+                                &:last-of-type {
+                                    display: inline-block;
+                                }
+                            }
                         }
                     }
                 }
