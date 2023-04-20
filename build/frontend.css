@@ -4987,13 +4987,13 @@ span.underline {
     .footer__content-contact .tagline {
       text-align: center;
       font-family: "Xanh Mono", monospace;
-      font-size: 48px;
-      line-height: 60px;
+      font-size: 40px;
+      line-height: 54px;
       padding-bottom: 24px; }
       @media only screen and (min-width: 1224px) {
         .footer__content-contact .tagline {
-          font-size: 63px;
-          line-height: 80px; } }
+          font-size: 55px;
+          line-height: 70px; } }
       .footer__content-contact .tagline #word-switcher {
         font-style: italic;
         position: relative;
@@ -5008,22 +5008,22 @@ span.underline {
                     animation: fade 2s ease-in-out infinite; }
     .footer__content-contact .email {
       text-align: center;
-      font-size: 48px;
-      line-height: 60px;
+      font-size: 40px;
+      line-height: 54px;
       font-weight: 300; }
       @media only screen and (min-width: 1224px) {
         .footer__content-contact .email {
-          font-size: 63px;
-          line-height: 80px; } }
+          font-size: 55px;
+          line-height: 70px; } }
       .footer__content-contact .email a {
         font-weight: 400;
         font-size: 22px;
-        line-height: 48px;
+        line-height: 36px;
         text-transform: uppercase;
         color: black;
         letter-spacing: 0.12em;
         position: relative;
-        padding: 0 20px;
+        padding: 0;
         top: -32px;
         text-decoration: none;
         display: inline-block;
@@ -5047,7 +5047,12 @@ span.underline {
       display: flex;
       grid-gap: 24px; }
       .footer__content-nav .nav a {
-        color: black; }
+        color: black;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 36px; }
+        .footer__content-nav .nav a:hover {
+          text-decoration: underline; }
 
 @-webkit-keyframes fade {
   0% {
@@ -5140,14 +5145,14 @@ select {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  grid-gap: 16px;
+  grid-gap: 12px;
   min-width: 150px; }
   .header .navbar-menu .menu-primary li a {
     text-transform: lowercase;
     color: #000000;
     font-weight: 300;
-    font-size: 28px;
-    line-height: 32px;
+    font-size: 22px;
+    line-height: 26px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -5221,6 +5226,7 @@ select {
     background: url(assets/images/cream-bg.png);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     z-index: -9; }
 
 .page__about .about-content {
@@ -5291,9 +5297,9 @@ select {
   position: relative; }
   .home .intro {
     position: relative;
-    top: -48px;
+    top: -72px;
     max-width: 522px;
-    margin-bottom: 48px; }
+    margin-bottom: 24px; }
     .home .intro p {
       font-weight: 400;
       font-size: 24px;
@@ -5409,6 +5415,7 @@ select {
     background: url(assets/images/purple-bg.png);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     z-index: -9; }
   .home .footer__content-contact .tagline {
     color: white; }

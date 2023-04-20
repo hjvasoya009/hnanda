@@ -3,9 +3,9 @@
 
     .intro {
         position: relative;
-        top: -48px;
+        top: -72px;
         max-width: 522px;
-        margin-bottom: 48px;
+        margin-bottom: 24px;
 
         p {
             font-family: map-get($fonts, "primaryfont");
@@ -144,6 +144,7 @@
         background: url('../assets/images/purple-bg.png');
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: center;
         z-index: -9;
     }
 
