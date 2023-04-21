@@ -32,7 +32,7 @@ class App {
 				// Assuming the element you want to get the width of has a class of "my-class"
 				var elementWidth = $('#word-switcher .active').width();
 
-				$('#word-switcher').css('padding-right', (elementWidth + 22) + "px");
+				$('#word-switcher').css('padding-right', (elementWidth + 24) + "px");
 				current = next;
 				next++;
 

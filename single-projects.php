@@ -158,6 +158,7 @@ get_header();
         if (get_field("show_research") == true) {
         ?>
             <div id="research" class="research tab-section">
+                <!-- Research Group -->
                 <?php
                 $researchGroup = get_field('research_group');
                 if ($researchGroup['background_research'] != '') {
@@ -187,6 +188,144 @@ get_header();
                 <?php
                 }
                 ?>
+
+                <!-- Research Group 1 -->
+                <?php
+                $researchGroup1 = get_field('research_group_1');
+                if ($researchGroup1['title'] != '') {
+                ?>
+                    <div class="research-group-1 bg<?= $researchGroup1['background'] ?> section-padding">
+                        <div class="max-width">
+                            <div class="research-content">
+                                <h3><?= $researchGroup1['title'] ?></h3>
+                                <div class="research-group-1-grid">
+                                    <ul class="list-items">
+                                        <?php
+                                        $items = $researchGroup1['content'];
+                                        foreach ($items as $item) {
+                                        ?>
+                                            <li><?= $item['item'] ?></li>
+                                        <?php
+                                        }
+                                        ?>
+                                    </ul>
+                                    <img src="<?= $researchGroup1['image']['url'] ?>" alt="<?= $researchGroup1['image']['title'] ?>" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                }
+                ?>
+
+                <!-- Research Group 2 -->
+                <?php
+                $researchGroup2 = get_field('research_group_2');
+                $researchsubGroup1 = $researchGroup2['research_group_2_sub_group_1'];
+                $researchsubGroup2 = $researchGroup2['research_group_2_sub_group_2'];
+                $researchsubGroup3 = $researchGroup2['research_group_2_sub_group_3'];
+
+                if ($researchsubGroup1['title'] != '') {
+                ?>
+                    <div class="research-group bg<?= $researchsubGroup1['background'] ?> section-padding">
+                        <div class="max-width">
+                            <div class="research-content">
+                                <h3><?= $researchsubGroup1['title'] ?></h3>
+                                <p><?= $researchsubGroup1['content'] ?></p>
+                                <div class="research-group-questions-grid">
+                                    <?php
+                                    $questions = $researchsubGroup1['questions'];
+                                    foreach ($questions as $question) {
+                                    ?>
+                                        <div>
+                                            <h4><?= $question['question'] ?></h4>
+                                            <span><?= $question['data'] ?></span>
+                                            <p><?= $question['answer'] ?></p>
+                                        </div>
+                                    <?php
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                }
+                ?>
+
+                <?php
+                if ($researchsubGroup2['content'] != '') {
+                ?>
+                    <div class="research-group bg<?= $researchsubGroup2['background'] ?> section-padding">
+                        <div class="max-width">
+                            <div class="research-content">
+                                <h3><?= $researchsubGroup2['title'] ?></h3>
+                                <p><?= $researchsubGroup2['content'] ?></p>
+                                <div class="research-group-grid">
+                                    <ul class="list-items">
+                                        <?php
+                                        $items = $researchsubGroup2['items'];
+                                        foreach ($items as $item) {
+                                        ?>
+                                            <li><?= $item['item'] ?></li>
+                                        <?php
+                                        }
+                                        ?>
+                                    </ul>
+                                    <img src="<?= $researchsubGroup2['image']['url'] ?>" alt="<?= $researchsubGroup2['image']['title'] ?>" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                }
+                ?>
+
+                <?php
+                if (sizeof($researchsubGroup3['questions']) > 0) {
+                ?>
+                    <div class="research-group research-group-3 bg<?= $researchsubGroup3['background'] ?> section-padding">
+                        <div class="max-width">
+                            <div class="research-content">
+                                <div class="research-group-questions-grid research-group-3-questions-grid">
+                                    <?php
+                                    $questions = $researchsubGroup3['questions'];
+                                    foreach ($questions as $question) {
+                                    ?>
+                                        <div>
+                                            <h4><?= $question['question'] ?></h4>
+                                            <span><?= $question['data'] ?></span>
+                                            <p><?= $question['answer'] ?></p>
+                                        </div>
+                                    <?php
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                }
+                ?>
+
+                <!-- Research Group 3 -->
+                <?php
+                $researchGroup3 = get_field('research_group_3');
+                if ($researchGroup3['title'] != '') {
+                ?>
+                    <div class="research-group-3 bg<?= $researchGroup3['background'] ?> section-padding">
+                        <div class="max-width">
+                            <div class="research-content">
+                                <h3><?= $researchGroup3['title'] ?></h3>
+                                <p><?= $researchGroup3['content'] ?></p>
+                                <img src="<?= $researchGroup3['image']['url'] ?>" alt="<?= $researchGroup3['image']['title'] ?>" />
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                }
+                ?>
+
             </div>
         <?php
         }

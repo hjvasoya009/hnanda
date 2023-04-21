@@ -5009,7 +5009,7 @@ span.underline {
       .footer__content-contact .tagline #word-switcher {
         font-style: italic;
         position: relative;
-        padding-right: 230px; }
+        padding-right: 192.30px; }
         .footer__content-contact .tagline #word-switcher label {
           border-bottom: 2px solid #000;
           position: absolute;
@@ -5624,6 +5624,64 @@ select {
 
 .single-projects .single-project-page--wrapper .research-background {
   margin-bottom: 60px; }
+
+.single-projects .single-project-page--wrapper .research-group-questions-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  grid-gap: 96px;
+  margin-top: 80px; }
+  .single-projects .single-project-page--wrapper .research-group-questions-grid h4 {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 80px; }
+  .single-projects .single-project-page--wrapper .research-group-questions-grid span {
+    font-weight: 300;
+    font-size: 72px;
+    line-height: 40px;
+    display: inline-block;
+    margin-bottom: 24px; }
+  .single-projects .single-project-page--wrapper .research-group-questions-grid p {
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 0; }
+
+.single-projects .single-project-page--wrapper .research-group-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 64px;
+  margin-top: 56px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .single-projects .single-project-page--wrapper .research-group-grid ul {
+    margin: 0;
+    padding: 0; }
+    .single-projects .single-project-page--wrapper .research-group-grid ul li {
+      list-style-type: none;
+      margin-bottom: 20px; }
+      .single-projects .single-project-page--wrapper .research-group-grid ul li:last-of-type {
+        margin-bottom: 0; }
+
+.single-projects .single-project-page--wrapper .research-group-1-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1.5fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
+  grid-gap: 64px; }
+
+.single-projects .single-project-page--wrapper .research-group-3 {
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(60%, #F4F4F4), color-stop(40%, #FFFFFF));
+  background: linear-gradient(0deg, #F4F4F4 60%, #FFFFFF 40%); }
+  .single-projects .single-project-page--wrapper .research-group-3-questions-grid {
+    margin-top: 0; }
 
 .single-projects .single-project-page--wrapper .problem-statement h3,
 .single-projects .single-project-page--wrapper .problem-statement p {
