@@ -5065,6 +5065,10 @@ span.underline {
         line-height: 36px; }
         .footer__content-nav .nav a:hover {
           text-decoration: underline; }
+    .footer__content-nav .copyright {
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 36px; }
 
 @-webkit-keyframes fade {
   0% {
