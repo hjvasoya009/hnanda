@@ -7,7 +7,7 @@
     "build": "cross-env NODE_ENV=production node ./scripts/build.js",
     "dp:staging": "git push origin master",
     "dp:prod": "git push origin master && npm run rb:prod",
-    "rb:prod": "ssh -p 65002 u380944048@81.16.28.37 \"cd domains/staging.hiteshrinanda.com/public_html/wp-content/themes/hnanda && sudo git pull origin master && npm run build \"",
+    "rb:prod": "ssh -p 65002 u380944048@81.16.28.37 \"cd domains/staging.hiteshrinanda.com/public_html/wp-content/themes/hnanda && sudo git pull origin master \"",
     "postinstall": "npm run build"
   },
   "author": "",
