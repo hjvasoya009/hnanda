@@ -75,6 +75,18 @@
 .colorblack {
   color: #000000; }
 
+.bggrey {
+  background: #F4F4F4; }
+
+.colorgrey {
+  color: #F4F4F4; }
+
+.bggreen {
+  background: #3D8D6F; }
+
+.colorgreen {
+  color: #3D8D6F; }
+
 /**
 *
 * 		HELPERS

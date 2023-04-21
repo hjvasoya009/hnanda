@@ -1240,6 +1240,18 @@ br.clear {
 .colorblack {
   color: #000000; }
 
+.bggrey {
+  background: #F4F4F4; }
+
+.colorgrey {
+  color: #F4F4F4; }
+
+.bggreen {
+  background: #3D8D6F; }
+
+.colorgreen {
+  color: #3D8D6F; }
+
 /**
 *
 * 		HELPERS
@@ -5489,85 +5501,170 @@ select {
   .single-projects .footer__content-icons, .single-projects .footer__content-contact {
     display: none; }
 
-.single-projects .single-project-page--wrapper {
+.single-projects .single-project-page .hero-image img {
+  width: 100vw;
+  max-height: 721px;
+  -o-object-fit: cover;
+     object-fit: cover; }
+
+.single-projects .single-project-page .max-width {
   max-width: 1220px; }
-  .single-projects .single-project-page--wrapper p {
+
+.single-projects .single-project-page--wrapper p {
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 36px; }
+  .single-projects .single-project-page--wrapper p strong {
+    font-weight: 400; }
+
+.single-projects .single-project-page--wrapper ul.list-items {
+  -webkit-margin-after: 1em;
+          margin-block-end: 1em;
+  -webkit-margin-start: 0px;
+          margin-inline-start: 0px;
+  -webkit-margin-end: 0px;
+          margin-inline-end: 0px;
+  -webkit-padding-start: 20px;
+          padding-inline-start: 20px; }
+  .single-projects .single-project-page--wrapper ul.list-items li {
+    list-style-type: disc;
     font-weight: 300;
     font-size: 22px;
     line-height: 36px; }
-    .single-projects .single-project-page--wrapper p strong {
-      font-weight: 400; }
-  .single-projects .single-project-page--wrapper .tabs {
-    max-width: 910px;
-    margin: 0 auto;
-    margin-top: 40px; }
-    .single-projects .single-project-page--wrapper .tabs-wrapper {
-      background: white;
-      position: sticky;
-      top: 0;
-      z-index: 9; }
-    .single-projects .single-project-page--wrapper .tabs ul {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: justify;
-          -ms-flex-pack: justify;
-              justify-content: space-between; }
-      .single-projects .single-project-page--wrapper .tabs ul li a {
-        font-weight: 300;
-        font-size: 24px;
-        line-height: 45px;
-        color: black; }
-      .single-projects .single-project-page--wrapper .tabs ul li.active a {
-        font-weight: 500; }
-  .single-projects .single-project-page--wrapper .the-brief {
-    margin-top: 48px; }
-    .single-projects .single-project-page--wrapper .the-brief-header h3 {
-      font-weight: 700;
-      font-size: 28px;
-      line-height: 36px;
-      margin-bottom: 24px; }
-    .single-projects .single-project-page--wrapper .the-brief-meta {
-      margin-bottom: 60px;
-      margin-top: 60px;
-      display: -ms-grid;
-      display: grid;
-      -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
-      grid-gap: 16px;
-      max-width: 900px; }
-      .single-projects .single-project-page--wrapper .the-brief-meta h4 {
-        font-weight: 600;
-        font-size: 22px;
-        line-height: 36px;
-        margin-bottom: 8px; }
-      .single-projects .single-project-page--wrapper .the-brief-meta span {
-        font-weight: 300;
-        font-size: 18px;
-        line-height: 25px; }
-    .single-projects .single-project-page--wrapper .the-brief-thumbnail {
-      margin-bottom: 60px; }
-    .single-projects .single-project-page--wrapper .the-brief-content p {
-      margin-bottom: 24px; }
-      .single-projects .single-project-page--wrapper .the-brief-content p strong {
-        display: block; }
-  .single-projects .single-project-page--wrapper #research,
-  .single-projects .single-project-page--wrapper #problem,
-  .single-projects .single-project-page--wrapper #final-design,
-  .single-projects .single-project-page--wrapper #user-testing,
-  .single-projects .single-project-page--wrapper #takeaways {
-    margin-bottom: 60px; }
-  .single-projects .single-project-page--wrapper .page-nav {
-    text-align: right;
-    margin-top: 200px; }
-    .single-projects .single-project-page--wrapper .page-nav--wrapper {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: end;
-          -ms-flex-pack: end;
-              justify-content: flex-end;
-      grid-gap: 24px; }
+
+.single-projects .single-project-page--wrapper .tabs {
+  max-width: 910px;
+  margin: 0 auto;
+  margin-top: 40px; }
+  .single-projects .single-project-page--wrapper .tabs-wrapper {
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 9; }
+  .single-projects .single-project-page--wrapper .tabs ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    .single-projects .single-project-page--wrapper .tabs ul li a {
+      font-weight: 300;
+      font-size: 24px;
+      line-height: 45px;
+      color: black; }
+    .single-projects .single-project-page--wrapper .tabs ul li.active a {
+      font-weight: 500; }
+
+.single-projects .single-project-page--wrapper .section-padding {
+  padding: 72px 0; }
+  .single-projects .single-project-page--wrapper .section-padding h3 {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 36px;
+    margin-bottom: 24px; }
+  .single-projects .single-project-page--wrapper .section-padding .tab-title {
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 36px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #A18CBB;
+    margin-bottom: 24px; }
+
+.single-projects .single-project-page--wrapper .the-brief-header h3 {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 36px;
+  margin-bottom: 24px; }
+
+.single-projects .single-project-page--wrapper .the-brief-meta {
+  margin-bottom: 60px;
+  margin-top: 60px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 16px;
+  max-width: 900px; }
+  .single-projects .single-project-page--wrapper .the-brief-meta h4 {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 36px;
+    margin-bottom: 8px; }
+  .single-projects .single-project-page--wrapper .the-brief-meta span {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 25px; }
+
+.single-projects .single-project-page--wrapper .the-brief-thumbnail {
+  margin-bottom: 60px; }
+
+.single-projects .single-project-page--wrapper .the-brief-content p {
+  margin-bottom: 24px; }
+  .single-projects .single-project-page--wrapper .the-brief-content p strong {
+    display: block; }
+
+.single-projects .single-project-page--wrapper .the-brief-prompt {
+  margin-bottom: 60px; }
+
+.single-projects .single-project-page--wrapper .the-brief-design-process img {
+  margin-top: 60px; }
+
+.single-projects .single-project-page--wrapper .the-brief-group-2-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 72px; }
+
+.single-projects .single-project-page--wrapper .the-brief-questions {
+  -ms-grid-column-span: 2;
+  grid-column: span 2; }
+
+.single-projects .single-project-page--wrapper .research-background {
+  margin-bottom: 60px; }
+
+.single-projects .single-project-page--wrapper .problem-statement h3,
+.single-projects .single-project-page--wrapper .problem-statement p {
+  color: white; }
+
+.single-projects .single-project-page--wrapper .problem-userflow img {
+  margin-top: 36px; }
+
+.single-projects .single-project-page--wrapper .final-design-group {
+  padding-top: 0; }
+
+.single-projects .single-project-page--wrapper .final-design-design_decision {
+  margin-bottom: 32px; }
+
+.single-projects .single-project-page--wrapper .final-design-visual_identity img {
+  margin-top: 64px; }
+
+.single-projects .single-project-page--wrapper .final-design-prototype img {
+  margin-top: 36px; }
+
+.single-projects .single-project-page--wrapper .final-design-impact {
+  padding-bottom: 0; }
+
+.single-projects .single-project-page--wrapper .user-testing-group-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1.5fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
+  grid-gap: 64px; }
+
+.single-projects .single-project-page--wrapper .page-nav {
+  text-align: right;
+  margin-top: 88px; }
+  .single-projects .single-project-page--wrapper .page-nav--wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    grid-gap: 24px; }
 
 
 /*# sourceMappingURL=frontend.css.map*/

@@ -12,8 +12,19 @@
     }
 
     .single-project-page {
-        &--wrapper {
+        .hero-image {
+            img {
+                width: 100vw;
+                max-height: 721px;
+                object-fit: cover;
+            }
+        }
+
+        .max-width {
             max-width: 1220px;
+        }
+
+        &--wrapper {
 
             p {
                 font-weight: 300;
@@ -22,6 +33,20 @@
 
                 strong {
                     font-weight: 400;
+                }
+            }
+
+            ul.list-items {
+                margin-block-end: 1em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                padding-inline-start: 20px;
+
+                li {
+                    list-style-type: disc;
+                    font-weight: 300;
+                    font-size: 22px;
+                    line-height: 36px;
                 }
             }
 
@@ -58,9 +83,28 @@
                 }
             }
 
-            .the-brief {
-                margin-top: 48px;
+            .section-padding {
+                padding: 72px 0;
 
+                h3 {
+                    font-weight: 700;
+                    font-size: 28px;
+                    line-height: 36px;
+                    margin-bottom: 24px;
+                }
+
+                .tab-title {
+                    font-weight: 800;
+                    font-size: 22px;
+                    line-height: 36px;
+                    letter-spacing: 0.04em;
+                    text-transform: uppercase;
+                    color: #A18CBB;
+                    margin-bottom: 24px;
+                }
+            }
+
+            .the-brief {
                 &-header {
                     h3 {
                         font-weight: 700;
@@ -105,19 +149,89 @@
                         }
                     }
                 }
+
+                &-prompt {
+                    margin-bottom: 60px;
+                }
+
+                &-design-process {
+                    img {
+                        margin-top: 60px;
+                    }
+                }
+
+                &-group-2-grid {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-gap: 72px;
+                }
+
+                &-questions {
+                    grid-column: span 2;
+                }
             }
 
-            #research,
-            #problem,
-            #final-design,
-            #user-testing,
-            #takeaways {
-                margin-bottom: 60px;
+            .research {
+                &-background {
+                    margin-bottom: 60px;
+                }
+            }
+
+            .problem {
+                &-statement {
+
+                    h3,
+                    p {
+                        color: white;
+                    }
+                }
+
+                &-userflow {
+                    img {
+                        margin-top: 36px;
+                    }
+                }
+            }
+
+            .final-design {
+                &-group {
+                    padding-top: 0;
+                }
+
+                &-design_decision {
+                    margin-bottom: 32px;
+                }
+
+                &-visual_identity {
+                    img {
+                        margin-top: 64px;
+                    }
+                }
+
+                &-prototype {
+                    img {
+                        margin-top: 36px;
+                    }
+                }
+
+                &-impact {
+                    padding-bottom: 0;
+                }
+            }
+
+            .user-testing {
+                &-group {
+                    &-grid {
+                        display: grid;
+                        grid-template-columns: 1.5fr 1fr;
+                        grid-gap: 64px;
+                    }
+                }
             }
 
             .page-nav {
                 text-align: right;
-                margin-top: 200px;
+                margin-top: 88px;
 
                 &--wrapper {
                     display: flex;
