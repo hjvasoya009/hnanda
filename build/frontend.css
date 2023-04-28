@@ -5651,14 +5651,12 @@ select {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
     grid-gap: 48px; }
   .single-projects .single-project-page--wrapper .research-group-questions-grid h4 {
     font-weight: 500;
     font-size: 26px;
-    line-height: 35px; }
+    line-height: 36px;
+    min-height: 150px; }
   .single-projects .single-project-page--wrapper .research-group-questions-grid span {
     font-weight: 300;
     font-size: 62px;
