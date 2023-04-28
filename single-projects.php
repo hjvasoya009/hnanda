@@ -237,10 +237,12 @@ get_header();
                                     $questions = $researchsubGroup1['questions'];
                                     foreach ($questions as $question) {
                                     ?>
-                                        <div>
+                                        <div class="research-group-questions-grid--inner">
                                             <h4><?= $question['question'] ?></h4>
-                                            <span><?= $question['data'] ?></span>
-                                            <p><?= $question['answer'] ?></p>
+                                            <div>
+                                                <span><?= $question['data'] ?></span>
+                                                <p><?= $question['answer'] ?></p>
+                                            </div>
                                         </div>
                                     <?php
                                     }
@@ -284,18 +286,20 @@ get_header();
                 <?php
                 if (sizeof($researchsubGroup3['questions']) > 0) {
                 ?>
-                    <div class="research-group research-group-3 bg<?= $researchsubGroup3['background'] ?> section-padding">
+                    <div class="research-group research-group-sub-3 bg<?= $researchsubGroup3['background'] ?> section-padding">
                         <div class="max-width">
                             <div class="research-content">
-                                <div class="research-group-questions-grid research-group-3-questions-grid">
+                                <div class="research-group-questions-grid research-group-sub-3-questions-grid">
                                     <?php
                                     $questions = $researchsubGroup3['questions'];
                                     foreach ($questions as $question) {
                                     ?>
-                                        <div>
+                                        <div class="research-group-questions-grid--inner">
                                             <h4><?= $question['question'] ?></h4>
-                                            <span><?= $question['data'] ?></span>
-                                            <p><?= $question['answer'] ?></p>
+                                            <div>
+                                                <span><?= $question['data'] ?></span>
+                                                <p><?= $question['answer'] ?></p>
+                                            </div>
                                         </div>
                                     <?php
                                     }
@@ -342,7 +346,7 @@ get_header();
                 ?>
                     <div class="problem-group bg<?= $problemGroup['background'] ?> section-padding">
                         <div class="max-width">
-                            <h2 class="tab-title">Problem 🔬</h2>
+                            <h2 class="tab-title">Problem 🤔</h2>
                             <div class="problem-content">
                                 <h3><?= $problemGroup['title'] ?></h3>
                                 <ul class="list-items">
@@ -407,7 +411,7 @@ get_header();
                 ?>
                     <div class="final-design-group section-padding">
                         <div class="max-width">
-                            <h2 class="tab-title">final design 🔬</h2>
+                            <h2 class="tab-title">final design 👩🏼‍🎨</h2>
                             <div class="final-design-design_decision">
                                 <h3>Design Decision</h3>
                                 <p><?= get_field("design_decision") ?></p>
@@ -432,7 +436,21 @@ get_header();
                             <div class="problem-content">
                                 <h3>Prototype</h3>
                                 <p><?= $prototype['content'] ?></p>
-                                <img src="<?= $prototype['image']['url'] ?>" alt="<?= $prototype['image']['title'] ?>" />
+                                <?php
+                                if ($prototype['prototype_file']['type'] == 'image') {
+                                ?>
+                                    <img src="<?= $prototype['prototype_file']['url'] ?>" alt="<?= $prototype['prototype_file']['title'] ?>" />
+                                <?php
+                                } else if ($prototype['prototype_file']['type'] == 'video') {
+                                ?>
+                                    <video controls="" controlslist="nodownload">
+                                        <source src="<?= $prototype['prototype_file']['url'] ?>" type="<?= $prototype['prototype_file']['mime_type'] ?>">
+                                        Your browser does not support HTML5 video.
+                                    </video>
+                                <?php
+                                }
+                                ?>
+
                             </div>
                         </div>
                     </div>
@@ -468,7 +486,7 @@ get_header();
                 ?>
                     <div class="user-testing-group bg<?= $userTestingGroup['background'] ?> section-padding">
                         <div class="max-width">
-                            <h2 class="tab-title">user testing 🔬</h2>
+                            <h2 class="tab-title">user testing 🦸</h2>
                             <div class="user-testing-content">
                                 <h3><?= $userTestingGroup['title'] ?></h3>
                                 <div class="user-testing-group-grid">
@@ -506,7 +524,7 @@ get_header();
                 ?>
                     <div class="takeaways-group bg<?= $takeawaysGroup['background'] ?> section-padding">
                         <div class="max-width">
-                            <h2 class="tab-title">Takeaways 🔬</h2>
+                            <h2 class="tab-title">Takeaways 🎁</h2>
                             <div class="takeaways-content">
                                 <h3><?= $takeawaysGroup['title'] ?></h3>
                                 <p><?= $takeawaysGroup['content'] ?></p>

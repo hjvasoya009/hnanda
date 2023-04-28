@@ -178,21 +178,29 @@
 
                 &-group {
                     &-questions-grid {
-                        display: flex;
-                        justify-content: space-between;
+                        // display: flex;
+                        // justify-content: space-between;
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
                         grid-gap: 96px;
                         margin-top: 80px;
 
+                        &--inner {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            grid-gap: 48px;
+                        }
+
                         h4 {
                             font-weight: 500;
-                            font-size: 32px;
-                            line-height: 40px;
-                            margin-bottom: 80px;
+                            font-size: 26px;
+                            line-height: 35px;
                         }
 
                         span {
                             font-weight: 300;
-                            font-size: 72px;
+                            font-size: 62px;
                             line-height: 40px;
                             display: inline-block;
                             margin-bottom: 24px;
@@ -200,15 +208,21 @@
 
                         p {
                             font-weight: 300;
-                            font-size: 32px;
-                            line-height: 40px;
+                            font-size: 26px;
+                            line-height: 36px;
                             margin-bottom: 0;
+                        }
+                    }
+
+                    &-sub-3 {
+                        &-questions-grid {
+                            margin-top: 0;
                         }
                     }
 
                     &-grid {
                         display: grid;
-                        grid-template-columns: 1fr 3fr;
+                        grid-template-columns: 1.5fr 1fr;
                         grid-gap: 64px;
                         margin-top: 56px;
                         align-items: center;
@@ -278,7 +292,9 @@
                 }
 
                 &-prototype {
-                    img {
+
+                    img,
+                    video {
                         margin-top: 36px;
                     }
                 }

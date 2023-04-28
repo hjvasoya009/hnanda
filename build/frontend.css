@@ -1305,9 +1305,16 @@ body {
   body.fixed {
     overflow: hidden; }
 
+strong {
+  font-weight: 400; }
+
 img {
   display: block;
   max-width: 100%; }
+
+video {
+  max-width: 100%;
+  height: auto; }
 
 section {
   position: relative; }
@@ -5630,36 +5637,48 @@ select {
   margin-bottom: 60px; }
 
 .single-projects .single-project-page--wrapper .research-group-questions-grid {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 96px;
   margin-top: 80px; }
+  .single-projects .single-project-page--wrapper .research-group-questions-grid--inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    grid-gap: 48px; }
   .single-projects .single-project-page--wrapper .research-group-questions-grid h4 {
     font-weight: 500;
-    font-size: 32px;
-    line-height: 40px;
-    margin-bottom: 80px; }
+    font-size: 26px;
+    line-height: 35px; }
   .single-projects .single-project-page--wrapper .research-group-questions-grid span {
     font-weight: 300;
-    font-size: 72px;
+    font-size: 62px;
     line-height: 40px;
     display: inline-block;
     margin-bottom: 24px; }
   .single-projects .single-project-page--wrapper .research-group-questions-grid p {
     font-weight: 300;
-    font-size: 32px;
-    line-height: 40px;
+    font-size: 26px;
+    line-height: 36px;
     margin-bottom: 0; }
+
+.single-projects .single-project-page--wrapper .research-group-sub-3-questions-grid {
+  margin-top: 0; }
 
 .single-projects .single-project-page--wrapper .research-group-grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 3fr;
-  grid-template-columns: 1fr 3fr;
+  -ms-grid-columns: 1.5fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
   grid-gap: 64px;
   margin-top: 56px;
   -webkit-box-align: center;
@@ -5703,7 +5722,8 @@ select {
 .single-projects .single-project-page--wrapper .final-design-visual_identity img {
   margin-top: 64px; }
 
-.single-projects .single-project-page--wrapper .final-design-prototype img {
+.single-projects .single-project-page--wrapper .final-design-prototype img,
+.single-projects .single-project-page--wrapper .final-design-prototype video {
   margin-top: 36px; }
 
 .single-projects .single-project-page--wrapper .final-design-impact {
