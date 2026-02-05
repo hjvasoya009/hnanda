@@ -6,6 +6,8 @@ class App {
 	init() {
 		$ = jQuery
 
+		this.bindMobileMenu();
+
 		$(window).scroll(function () {
 			var scrollPos = $(window).scrollTop(),
 				navH = $('.tabs').height();
@@ -40,6 +42,44 @@ class App {
 					next = 0;
 				}
 			}, 2000);
+		});
+
+	}
+
+	bindMobileMenu() {
+		const $toggle = $('.navbar-toggle');
+		const $overlay = $('.mobile-menu-overlay');
+		const $close = $('.mobile-menu-close');
+		const $links = $('.mobile-menu a');
+		const $body = $('body');
+
+		const openMenu = () => {
+			$overlay.addClass('active').attr('aria-hidden', 'false');
+			$toggle.attr('aria-expanded', 'true');
+			$body.addClass('no-scroll');
+		};
+
+		const closeMenu = () => {
+			$overlay.removeClass('active').attr('aria-hidden', 'true');
+			$toggle.attr('aria-expanded', 'false');
+			$body.removeClass('no-scroll');
+		};
+
+		$toggle.on('click', function () {
+			if ($overlay.hasClass('active')) {
+				closeMenu();
+			} else {
+				openMenu();
+			}
+		});
+
+		$close.on('click', closeMenu);
+		$links.on('click', closeMenu);
+
+		$(document).on('keyup', function (event) {
+			if (event.key === 'Escape') {
+				closeMenu();
+			}
 		});
 
 	}

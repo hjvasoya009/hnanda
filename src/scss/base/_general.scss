@@ -1,3 +1,4 @@
+@use "sass:map";
 /**
 *
 * 		GENERAL
@@ -29,6 +30,10 @@ body {
 	overflow-x: hidden;
 
 	&.fixed {
+		overflow: hidden;
+	}
+
+	&.no-scroll {
 		overflow: hidden;
 	}
 }
@@ -67,33 +72,33 @@ a.btn {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	color: map-get($colors, "white");
+	color: map.get($colors, "white");
 	font-size: 14px;
 	letter-spacing: 2.1875px;
 	padding: 0 30px;
 	height: 49px;
-	border: 1px solid map-get($colors, "brand");
-	background-color: map-get($colors, "brand");
+	border: 1px solid map.get($colors, "brand");
+	background-color: map.get($colors, "brand");
 	text-transform: uppercase;
 	transition: all 0.2s ease-in-out;
 
 	&:hover {
-		background-color: map-get($colors, "white");
-		color: map-get($colors, "brand");
-		border: 1px solid map-get($colors, "brand");
+		background-color: map.get($colors, "white");
+		color: map.get($colors, "brand");
+		border: 1px solid map.get($colors, "brand");
 	}
 }
 
 .max-width {
 	max-width: $max-width;
 	margin: 0 auto;
-	padding: 0 20px;
+	padding: 0 30px;
 
 	@include breakpoint("sm") {
-		padding: 0 40px;
+		padding: 0 48px;
 	}
 
 	@include breakpoint("lg") {
-		padding: 0 60px;
+		padding: 0 150px;
 	}
 }

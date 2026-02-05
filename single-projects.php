@@ -50,11 +50,11 @@ get_header();
                             <span><?= get_field("brief_position") ?></span>
                         </div>
                         <div>
-                            <h4>Project</h4>
+                            <h4>Company</h4>
                             <span><?= get_field("brief_project") ?></span>
                         </div>
                         <div>
-                            <h4>Timleline</h4>
+                            <h4>Timeline</h4>
                             <span><?= get_field("brief_timeline") ?></span>
                         </div>
                         <div>

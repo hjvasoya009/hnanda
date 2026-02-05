@@ -1,3 +1,4 @@
+@use "sass:map";
 .page-template-template-process {
     .footer {
         padding-top: 96px;
@@ -56,7 +57,7 @@
 
             &:hover {
                 font-weight: 400;
-                font-family: map-get($fonts, "secondaryfont");
+                font-family: map.get($fonts, "secondaryfont");
                 font-style: italic;
                 border-bottom: 1px solid black;
             }
