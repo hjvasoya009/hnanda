@@ -92,13 +92,4 @@ a.btn {
 .max-width {
 	max-width: $max-width;
 	margin: 0 auto;
-	padding: 0 30px;
-
-	@include breakpoint("sm") {
-		padding: 0 48px;
-	}
-
-	@include breakpoint("lg") {
-		padding: 0 150px;
-	}
 }

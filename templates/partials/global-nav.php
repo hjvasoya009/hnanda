@@ -63,10 +63,20 @@
             </button>
         </div>
         <div class="mobile-menu" role="menu">
-            <a href="/" role="menuitem">work</a>
-            <a href="/about" role="menuitem">visual design</a>
-            <a href="/about" role="menuitem">about</a>
-            <a href="mailto:hiteshrinanda92@gmail.com" role="menuitem">contact</a>
+            <ul id="menu-primary" class="menu-primary">
+                <li class="menu-item <?= ($_SERVER['REQUEST_URI'] == '/') ? 'current-menu-item' : '' ?>">
+                    <a href="/">work</a>
+                </li>
+                <li class="menu-item <?= ($_SERVER['REQUEST_URI'] == '/about/') ? 'current-menu-item' : '' ?>">
+                    <a href="/about">visual design</a>
+                </li>
+                <li class="menu-item <?= ($_SERVER['REQUEST_URI'] == '/about/') ? 'current-menu-item' : '' ?>">
+                    <a href="/about">about</a>
+                </li>
+                <li class="menu-item">
+                    <a href="mailto:hiteshrinanda92@gmail.com">contact</a>
+                </li>
+            </ul>
         </div>
     </div>
 </header>

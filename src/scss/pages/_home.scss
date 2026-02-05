@@ -1,90 +1,90 @@
 @use "sass:map";
 
 .homepage {
-    padding: 56px 0 120px;
     background: #fff;
+    padding-top: 0;
+    padding-bottom: 56px;
 
-    @media (max-width: 900px) {
-        padding: 32px 0 80px;
+    @include breakpoint("sm") {
+        padding-top: 16px;
+        padding-bottom: 64px;
+    }
+
+    @include breakpoint("md") {
+        padding-top: 52px;
+        padding-bottom: 100px;
     }
 
     &__container {
-        max-width: 1440px;
+        padding: 0 30px;
+
+        @include breakpoint("sm") {
+            padding: 0 48px;
+        }
+
+        @include breakpoint("md") {
+            padding: 0 64px;
+        }
+
+        @include breakpoint("lg") {
+            padding: 0px 96px;
+        }
+
+        @include breakpoint("xlg") {
+            padding: 0px 150px;
+        }
     }
 
     &__intro {
-        max-width: 860px;
-        margin: 0 auto 96px;
-        text-align: center;
+        max-width: 700px;
+        margin: 0 auto 54px;
         display: flex;
         flex-direction: column;
-        gap: 14px;
+        align-items: flex-start;
+        text-align: left;
+        gap: 16px;
 
-        @media (max-width: 900px) {
-            align-items: flex-start;
-            text-align: left;
-            gap: 12px;
-            margin-bottom: 64px;
+
+        @include breakpoint("md") {
+            max-width: 700px;
+            margin: 0 auto 90px;
+            align-items: center;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
         }
     }
 
     &__intro-line {
-        font-size: 18px;
-        line-height: 1.6;
-        color: #111;
         margin: 0;
 
-        @media (max-width: 900px) {
-            font-size: 16px;
-            line-height: 1.55;
+        @include breakpoint("md") {
+            font-size: 20px;
+            line-height: 30px;
         }
     }
 
     &__projects {
         display: flex;
         flex-direction: column;
-        gap: 64px;
+        gap: 48px;
 
-        @media (max-width: 900px) {
-            gap: 48px;
+        @include breakpoint("sm") {
+            gap: 64px;
         }
     }
 }
 
 .project-card {
-    display: grid;
-    grid-template-columns: 1.8fr 1fr;
+    display: flex;
+    flex-direction: column;
     align-items: stretch;
     background: #fff;
-    border-radius: 0;
-    border: 1px solid #E9E9E9;
-    padding: 0;
-    min-height: 520px;
+    min-height: auto;
 
-    @media (max-width: 900px) {
-        display: flex;
-        flex-direction: column;
-        grid-template-columns: none;
-        gap: 20px;
-        padding: 24px;
-        min-height: auto;
-    }
-
-    &--media-right {
-        grid-template-columns: 1fr 1.8fr;
-
-        .project-card__media {
-            order: 2;
-        }
-
-        .project-card__info {
-            order: 1;
-        }
-    }
-
+    &--media-right,
     &--media-left {
-        grid-template-columns: 1.8fr 1fr;
-
         .project-card__media {
             order: 1;
         }
@@ -94,10 +94,28 @@
         }
     }
 
-    @media (max-width: 900px) {
+    @include breakpoint("md") {
+        display: grid;
+        grid-template-columns: 1.8fr 1fr;
+        padding: 0;
+        min-height: 520px;
+        gap: unset;
 
-        &--media-right,
+        &--media-right {
+            grid-template-columns: 1fr 1.8fr;
+
+            .project-card__media {
+                order: 2;
+            }
+
+            .project-card__info {
+                order: 1;
+            }
+        }
+
         &--media-left {
+            grid-template-columns: 1.8fr 1fr;
+
             .project-card__media {
                 order: 1;
             }
@@ -106,24 +124,21 @@
                 order: 2;
             }
         }
+
     }
 
     &__media {
         border-radius: 0;
         overflow: hidden;
-        min-height: 360px;
+        min-height: 260px;
         display: flex;
         align-items: stretch;
         justify-content: stretch;
         padding: 0;
         position: relative;
 
-        @media (min-width: 901px) {
+        @include breakpoint("md") {
             min-height: 520px;
-        }
-
-        @media (max-width: 900px) {
-            min-height: 260px;
         }
 
         img {
@@ -155,7 +170,7 @@
     &__media.has-image {
         padding: 0;
 
-        @media (min-width: 901px) {
+        @include breakpoint("md") {
             min-height: 520px;
         }
     }
@@ -171,44 +186,65 @@
     &__info {
         display: flex;
         flex-direction: column;
-        gap: 14px;
+        gap: 20px;
         justify-content: center;
-        padding: 40px;
+        padding: 28px;
+        border-radius: 0;
+        border: 1px solid #E9E9E9;
 
-        @media (max-width: 900px) {
-            padding: 24px;
+        @include breakpoint("md") {
+            padding: 32px;
+        }
+
+        @include breakpoint("lg") {
+            padding: 44px;
         }
     }
 
     &__label {
-        font-size: 12px;
-        letter-spacing: 0.12em;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 15px;
         text-transform: uppercase;
-        color: #5a5a5a;
-        font-weight: 500;
+
+        @include breakpoint("md") {
+            font-size: 16px;
+            line-height: 120%;
+        }
     }
 
     &__title {
-        font-size: 26px;
-        line-height: 1.35;
+        font-size: 18px;
+        font-style: normal;
         font-weight: 700;
-        color: #000;
+        line-height: 25px;
         margin: 0;
 
-        @media (max-width: 900px) {
+        @include breakpoint("sm") {
             font-size: 22px;
+            line-height: 28px;
+        }
+
+        @include breakpoint("md") {
+            font-size: 25px;
+            line-height: 30px;
         }
     }
 
     &__description {
-        font-size: 15px;
-        line-height: 1.6;
-        color: #3f3f3f;
         margin: 0;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 140%;
+
+        @include breakpoint("md") {
+            font-size: 16px;
+        }
     }
 
     &__button {
-        margin-top: 6px;
         align-self: flex-start;
     }
 }

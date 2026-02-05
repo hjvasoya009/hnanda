@@ -28,7 +28,7 @@ get_header();
                     'alignment'   => ($index % 2 === 0) ? 'media-right' : 'media-left',
                     'media_style' => ($index % 2 === 0) ? 'media--red-diagonal' : 'media--split-red',
                     'thumbnail'   => ($thumb = get_field('thumbnail')) ? $thumb['url'] : '',
-                    'company'     => get_field('company_name'),
+                    'company'     => get_field('project_name'),
                     'title'       => get_field('project_title'),
                     'description' => get_field('short_description') ?: get_field('about_excerpt'),
                     'link'        => '/projects/' . $post->post_name

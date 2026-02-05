@@ -45,16 +45,41 @@ nav#primary {}
 	}
 
 	.mobile-menu {
-		display: flex;
-		flex-direction: column;
-		gap: 40px;
+		.menu-primary {
+			min-width: 210px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: 0;
+			padding: 0;
+			list-style: none;
 
-		a {
-			color: #fff;
-			font-size: 24px;
-			line-height: 32px;
-			text-decoration: none;
-			font-weight: 400;
+			li {
+				width: 100%;
+				padding: 16px;
+
+				a {
+					font-size: 20px;
+					line-height: normal;
+					color: #fff;
+					font-weight: 300;
+					text-decoration: none;
+					transition: opacity 0.3s ease;
+					display: block;
+
+					&:hover {
+						opacity: 0.7;
+					}
+				}
+
+				&.current-menu-item {
+					a {
+						font-weight: 700;
+						font-style: italic;
+						color: #7449A9;
+					}
+				}
+			}
 		}
 	}
 

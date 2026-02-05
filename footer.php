@@ -6,7 +6,7 @@
 	<div class="footer__container max-width">
 		<div class="footer__cta">
 			<div class="footer__cta-content">
-				<h2 class="footer__cta-title">Ready to collaborate on a project<br>or discuss an opportunity?</h2>
+				<h2 class="footer__cta-title">Ready to collaborate on a project or discuss an opportunity?</h2>
 				<p class="footer__cta-subtitle">Let's connect.</p>
 			</div>
 			<div class="footer__cta-buttons">

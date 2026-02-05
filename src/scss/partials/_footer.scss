@@ -7,68 +7,114 @@
 **/
 
 .footer {
-	padding: 110px 0 40px;
 	background: #f2e9f7;
 
-	@media (max-width: 500px) {
-		padding: 80px 0 32px;
-	}
-
 	&__container {
-		padding: 0;
+		padding: 37px 30px;
+
+		@include breakpoint("sm") {
+			padding: 37px 48px;
+			padding-top: 48px;
+		}
+
+		@include breakpoint("md") {
+			padding: 37px 64px;
+			padding-top: 64px;
+		}
+
+		@include breakpoint("lg") {
+			padding: 37px 96px;
+			padding-top: 96px;
+		}
+
+		@include breakpoint("xlg") {
+			padding: 37px 150px;
+			padding-top: 105px;
+		}
 	}
 
 	&__cta {
 		background: #fff;
 		border-radius: 0px;
-		padding: 48px 56px;
+		padding: 30px;
 		display: flex;
+		flex-direction: column;
+		gap: 24px;
 		justify-content: space-between;
 		align-items: flex-start;
-		gap: 40px;
 		flex-wrap: wrap;
 		box-shadow: 0 24px 60px rgba(0, 0, 0, 0.06);
 
-		@media (max-width: 900px) {
-			padding: 32px 28px;
-			gap: 28px;
-			margin: 0 30px;
+		@include breakpoint("md") {
+			padding: 30px 48px;
+			flex-direction: row;
+			align-items: center;
+		}
+
+		@include breakpoint("lg") {
+			padding: 30px 55px;
 		}
 
 		&-content {
 			flex: 1;
-			min-width: 280px;
+			max-width: 420px;
+
+			@include breakpoint("lg") {
+				max-width: 512px;
+			}
 		}
 
 		&-title {
-			font-size: 28px;
-			line-height: 1.4;
-			font-weight: 600;
-			margin: 0 0 12px;
-			color: #0c0c0c;
+			font-size: 20px;
+			font-style: normal;
+			font-weight: 700;
+			line-height: 25px;
+			color: #000;
 
-			@media (max-width: 900px) {
+			@include breakpoint("md") {
 				font-size: 24px;
+				line-height: 32px;
+			}
+
+			@include breakpoint("lg") {
+				font-size: 31px;
+				line-height: 40px;
 			}
 		}
 
 		&-subtitle {
-			font-size: 16px;
-			line-height: 1.5;
-			font-weight: 400;
 			margin: 0;
-			color: #111;
+			padding-top: 10px;
+			color: #000;
+			font-size: 14px;
+			font-style: normal;
+			font-weight: 300;
+			line-height: 140%;
+
+			@include breakpoint("md") {
+				font-size: 17px;
+				line-height: 145%;
+			}
+
+			@include breakpoint("lg") {
+				font-size: 20px;
+				line-height: 150%;
+			}
 		}
 
 		&-buttons {
 			display: flex;
-			flex-direction: row;
+			flex-direction: column;
 			gap: 12px;
-			min-width: 280px;
-			flex-wrap: wrap;
+			width: 100%;
 
-			@media (max-width: 600px) {
-				flex-direction: column;
+			@include breakpoint("sm") {
+				flex-direction: row;
+				width: auto;
+			}
+
+			@include breakpoint("xlg") {
+				gap: 48px;
 			}
 		}
 	}
@@ -77,17 +123,24 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: 28px 0 0;
-		margin-top: 32px;
-		border-top: 1px solid rgba(0, 0, 0, 0.08);
-		color: #0c0c0c;
+		padding-top: 37px;
+		color: #000;
 		font-size: 14px;
 
-		@media (max-width: 900px) {
-			flex-direction: row;
-			gap: 14px;
-			align-items: flex-start;
-			margin: 0 30px;
+		@include breakpoint("sm") {
+			padding-top: 48px;
+		}
+
+		@include breakpoint("md") {
+			padding-top: 64px;
+		}
+
+		@include breakpoint("lg") {
+			padding-top: 96px;
+		}
+
+		@include breakpoint("xlg") {
+			padding-top: 105px;
 		}
 	}
 
@@ -96,21 +149,31 @@
 		gap: 20px;
 
 		a {
-			color: #0c0c0c;
+			color: #000;
 			text-decoration: none;
 			font-size: 14px;
-			font-weight: 400;
+			font-weight: 300;
 			transition: opacity 0.25s ease;
 
+			@include breakpoint("md") {
+				font-size: 20px;
+				line-height: 30px;
+			}
+
 			&:hover {
-				opacity: 0.7;
+				opacity: 0.6;
 			}
 		}
 	}
 
 	&__copyright {
-		color: #0c0c0c;
+		color: #000;
 		font-size: 14px;
-		font-weight: 400;
+		font-weight: 300;
+
+		@include breakpoint("md") {
+			font-size: 20px;
+			line-height: 30px;
+		}
 	}
 }
