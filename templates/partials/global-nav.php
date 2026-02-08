@@ -18,8 +18,8 @@
                                 <li class="menu-item <?= ($_SERVER['REQUEST_URI'] == '/') ? 'current-menu-item' : '' ?>">
                                     <a href="/">work</a>
                                 </li>
-                                <li class="menu-item <?= ($_SERVER['REQUEST_URI'] == '/about/') ? 'current-menu-item' : '' ?>">
-                                    <a href="/about">visual design</a>
+                                <li class="menu-item <?= ($_SERVER['REQUEST_URI'] == '/visual-design/') ? 'current-menu-item' : '' ?>">
+                                    <a href="/visual-design">visual design</a>
                                 </li>
                                 <li class="menu-item <?= ($_SERVER['REQUEST_URI'] == '/about/') ? 'current-menu-item' : '' ?>">
                                     <a href="/about">about</a>
@@ -67,8 +67,8 @@
                 <li class="menu-item <?= ($_SERVER['REQUEST_URI'] == '/') ? 'current-menu-item' : '' ?>">
                     <a href="/">work</a>
                 </li>
-                <li class="menu-item <?= ($_SERVER['REQUEST_URI'] == '/about/') ? 'current-menu-item' : '' ?>">
-                    <a href="/about">visual design</a>
+                <li class="menu-item <?= ($_SERVER['REQUEST_URI'] == '/visual-design/') ? 'current-menu-item' : '' ?>">
+                    <a href="/visual-design">visual design</a>
                 </li>
                 <li class="menu-item <?= ($_SERVER['REQUEST_URI'] == '/about/') ? 'current-menu-item' : '' ?>">
                     <a href="/about">about</a>

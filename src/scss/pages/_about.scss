@@ -1,106 +1,266 @@
 .page__about {
-    p {
-        font-weight: 400;
-        font-size: 22px;
-        line-height: 36px;
+    padding-top: 0;
+    padding-bottom: 56px;
+
+    @include breakpoint("sm") {
+        padding-top: 16px;
+        padding-bottom: 64px;
+    }
+
+    @include breakpoint("md") {
+        padding-top: 52px;
+        padding-bottom: 100px;
+    }
+
+    &__container {
+        padding: 0 30px;
+
+        @include breakpoint("sm") {
+            padding: 0 48px;
+        }
+
+        @include breakpoint("md") {
+            padding: 0 64px;
+        }
+
+        @include breakpoint("lg") {
+            padding: 0px 96px;
+        }
+
+        @include breakpoint("xlg") {
+            padding: 0px 150px;
+        }
     }
 
     .about {
-        &-bg {
-            position: relative;
-            padding-bottom: 130px;
-            margin-top: -50px;
-
-            .bg-overlay {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                top: 40%;
-                width: 100%;
-                background: url('../assets/images/cream-bg.png');
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center;
-                z-index: -9;
-            }
-        }
-
         &-content {
-            margin-top: 40px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-gap: 80px;
+            display: flex;
+            flex-direction: column;
+            grid-gap: 48px;
+            justify-content: space-between;
+
+            @include breakpoint("md") {
+                flex-direction: row;
+            }
 
             .profile-picture {
-                max-width: 600px;
+                @include breakpoint("md") {
+                    min-width: 350px;
+                }
+
+                @include breakpoint("lg") {
+                    max-width: 530px;
+                }
             }
 
             .content {
+
+                @include breakpoint("md") {
+                    max-width: 530px;
+                }
+
                 p {
-                    margin-bottom: 24px;
-                    font-size: 18px;
-                    line-height: 33px;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 300;
+                    line-height: 140%;
+                    margin-bottom: 16px;
+
+                    @include breakpoint("md") {
+                        font-size: 16px;
+                    }
+                }
+
+                .cta-buttons {
+                    margin-top: 32px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 16px;
+
+                    @include breakpoint("sm") {
+                        flex-direction: row;
+                        gap: 40px;
+                    }
                 }
             }
         }
     }
 
-    .gallery {
-        padding-top: 200px;
-        max-width: 1100px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-gap: 24px;
-        margin-bottom: 56px;
-    }
-
-    .interests-expertise {
-        max-width: 1100px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 24px;
-
-        h3 {
-            font-weight: 700;
-            font-size: 24px;
-            line-height: 36px;
-            margin-bottom: 12px;
-        }
-
-        p {
-            font-weight: 300;
-            font-size: 24px;
-            line-height: 36px;
-        }
-    }
-
     .clients {
-        margin-top: 148px;
+        margin-top: 76px;
+
+        @include breakpoint("sm") {
+            margin-top: 100px;
+        }
+
+        @include breakpoint("lg") {
+            margin-top: 130px;
+        }
 
         &-header {
-            max-width: 1100px;
-            margin: 0 auto;
             margin-bottom: 48px;
 
             h2 {
+                display: none;
+            }
+
+            h3 {
+                font-size: 20px;
+                font-style: normal;
                 font-weight: 700;
-                font-size: 28px;
-                line-height: 36px;
-                margin-bottom: 20px;
+                line-height: 25px;
+
+                @include breakpoint("sm") {
+                    font-size: 22px;
+                    line-height: 30px;
+                }
+
+                @include breakpoint("md") {
+                    font-size: 28px;
+                    line-height: 35px;
+                }
+
+                @include breakpoint("lg") {
+                    font-size: 31px;
+                    line-height: 40px;
+                }
             }
         }
 
         &-list {
             display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            grid-gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 12px;
+
+            @include breakpoint("sm") {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 20px;
+            }
+
+            @include breakpoint("md") {
+                grid-template-columns: repeat(7, 1fr);
+            }
 
             img {
+                border-radius: 5px;
                 border: 0.2px solid #949494;
-                border-radius: 0px;
+            }
+        }
+    }
+
+    .design-process {
+        margin-top: 76px;
+
+        @include breakpoint("sm") {
+            margin-top: 100px;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 25px;
+
+            @include breakpoint("sm") {
+                font-size: 22px;
+                line-height: 30px;
+            }
+
+            @include breakpoint("md") {
+                font-size: 28px;
+                line-height: 35px;
+            }
+
+            @include breakpoint("lg") {
+                font-size: 31px;
+                line-height: 40px;
+            }
+        }
+
+        &-image {
+            margin-top: 44px;
+            margin-bottom: 44px;
+
+            @include breakpoint("sm") {
+                margin-top: 48px;
+                margin-bottom: 56px;
+            }
+
+            @include breakpoint("md") {
+                margin-top: 56px;
+                margin-bottom: 70px;
+            }
+
+            svg {
+                width: 100%;
+            }
+
+            .design-process-mobile {
+                display: block;
+
+                @include breakpoint("sm") {
+                    display: none;
+                }
+            }
+
+            .design-process-desktop {
+                display: none;
+
+                @include breakpoint("sm") {
+                    display: block;
+                }
+            }
+        }
+
+        &-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+
+            @include breakpoint("sm") {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+
+            .step {
+                border: 1px solid #9E9E9E;
+                padding: 24px 28px;
+
+                @include breakpoint("sm") {
+                    padding: 28px 32px;
+                }
+
+                @include breakpoint("md") {
+                    padding: 32px 36px;
+                }
+
+                h4 {
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 25px;
+                    margin-bottom: 10px;
+
+                    @include breakpoint("sm") {
+                        font-size: 18px;
+                    }
+
+                    @include breakpoint("md") {
+                        font-size: 20px;
+                    }
+                }
+
+                p {
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 300;
+                    line-height: 140%;
+
+                    @include breakpoint("sm") {
+                        font-size: 16px;
+                    }
+                }
             }
         }
     }

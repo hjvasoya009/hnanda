@@ -6923,100 +6923,307 @@ select {
 *			- 404 Page Styles should go here
 *
 **/
-.page__about p {
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 36px;
+.page__about {
+  padding-top: 0;
+  padding-bottom: 56px;
 }
-.page__about .about-bg {
-  position: relative;
-  padding-bottom: 130px;
-  margin-top: -50px;
+@media only screen and (min-width: 768px) {
+  .page__about {
+    padding-top: 16px;
+    padding-bottom: 64px;
+  }
 }
-.page__about .about-bg .bg-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 40%;
-  width: 100%;
-  background: url(c5cc648869406eec29b9.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  z-index: -9;
+@media only screen and (min-width: 992px) {
+  .page__about {
+    padding-top: 52px;
+    padding-bottom: 100px;
+  }
+}
+.page__about__container {
+  padding: 0 30px;
+}
+@media only screen and (min-width: 768px) {
+  .page__about__container {
+    padding: 0 48px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .page__about__container {
+    padding: 0 64px;
+  }
+}
+@media only screen and (min-width: 1224px) {
+  .page__about__container {
+    padding: 0px 96px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .page__about__container {
+    padding: 0px 150px;
+  }
 }
 .page__about .about-content {
-  margin-top: 40px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  grid-gap: 48px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
-.page__about .about-content .profile-picture {
-  max-width: 600px;
+@media only screen and (min-width: 992px) {
+  .page__about .about-content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .page__about .about-content .profile-picture {
+    min-width: 350px;
+  }
+}
+@media only screen and (min-width: 1224px) {
+  .page__about .about-content .profile-picture {
+    max-width: 530px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .page__about .about-content .content {
+    max-width: 530px;
+  }
 }
 .page__about .about-content .content p {
-  margin-bottom: 24px;
-  font-size: 18px;
-  line-height: 33px;
-}
-.page__about .gallery {
-  padding-top: 200px;
-  max-width: 1100px;
-  margin: 0 auto;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[4];
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 24px;
-  margin-bottom: 56px;
-}
-.page__about .interests-expertise {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 24px;
-}
-.page__about .interests-expertise h3 {
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 36px;
-  margin-bottom: 12px;
-}
-.page__about .interests-expertise p {
+  font-size: 14px;
+  font-style: normal;
   font-weight: 300;
-  font-size: 24px;
-  line-height: 36px;
+  line-height: 140%;
+  margin-bottom: 16px;
+}
+@media only screen and (min-width: 992px) {
+  .page__about .about-content .content p {
+    font-size: 16px;
+  }
+}
+.page__about .about-content .content .cta-buttons {
+  margin-top: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 16px;
+}
+@media only screen and (min-width: 768px) {
+  .page__about .about-content .content .cta-buttons {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 40px;
+  }
 }
 .page__about .clients {
-  margin-top: 148px;
+  margin-top: 76px;
+}
+@media only screen and (min-width: 768px) {
+  .page__about .clients {
+    margin-top: 100px;
+  }
+}
+@media only screen and (min-width: 1224px) {
+  .page__about .clients {
+    margin-top: 130px;
+  }
 }
 .page__about .clients-header {
-  max-width: 1100px;
-  margin: 0 auto;
   margin-bottom: 48px;
 }
 .page__about .clients-header h2 {
+  display: none;
+}
+.page__about .clients-header h3 {
+  font-size: 20px;
+  font-style: normal;
   font-weight: 700;
-  font-size: 28px;
-  line-height: 36px;
-  margin-bottom: 20px;
+  line-height: 25px;
+}
+@media only screen and (min-width: 768px) {
+  .page__about .clients-header h3 {
+    font-size: 22px;
+    line-height: 30px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .page__about .clients-header h3 {
+    font-size: 28px;
+    line-height: 35px;
+  }
+}
+@media only screen and (min-width: 1224px) {
+  .page__about .clients-header h3 {
+    font-size: 31px;
+    line-height: 40px;
+  }
 }
 .page__about .clients-list {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[7];
-  grid-template-columns: repeat(7, 1fr);
-  grid-gap: 20px;
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 12px;
+}
+@media only screen and (min-width: 768px) {
+  .page__about .clients-list {
+    -ms-grid-columns: (1fr)[5];
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .page__about .clients-list {
+    -ms-grid-columns: (1fr)[7];
+    grid-template-columns: repeat(7, 1fr);
+  }
 }
 .page__about .clients-list img {
+  border-radius: 5px;
   border: 0.2px solid #949494;
-  border-radius: 0px;
+}
+.page__about .design-process {
+  margin-top: 76px;
+}
+@media only screen and (min-width: 768px) {
+  .page__about .design-process {
+    margin-top: 100px;
+  }
+}
+.page__about .design-process h3 {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 25px;
+}
+@media only screen and (min-width: 768px) {
+  .page__about .design-process h3 {
+    font-size: 22px;
+    line-height: 30px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .page__about .design-process h3 {
+    font-size: 28px;
+    line-height: 35px;
+  }
+}
+@media only screen and (min-width: 1224px) {
+  .page__about .design-process h3 {
+    font-size: 31px;
+    line-height: 40px;
+  }
+}
+.page__about .design-process-image {
+  margin-top: 44px;
+  margin-bottom: 44px;
+}
+@media only screen and (min-width: 768px) {
+  .page__about .design-process-image {
+    margin-top: 48px;
+    margin-bottom: 56px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .page__about .design-process-image {
+    margin-top: 56px;
+    margin-bottom: 70px;
+  }
+}
+.page__about .design-process-image svg {
+  width: 100%;
+}
+.page__about .design-process-image .design-process-mobile {
+  display: block;
+}
+@media only screen and (min-width: 768px) {
+  .page__about .design-process-image .design-process-mobile {
+    display: none;
+  }
+}
+.page__about .design-process-image .design-process-desktop {
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  .page__about .design-process-image .design-process-desktop {
+    display: block;
+  }
+}
+.page__about .design-process-steps {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 24px;
+}
+@media only screen and (min-width: 768px) {
+  .page__about .design-process-steps {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+.page__about .design-process-steps .step {
+  border: 1px solid #9E9E9E;
+  padding: 24px 28px;
+}
+@media only screen and (min-width: 768px) {
+  .page__about .design-process-steps .step {
+    padding: 28px 32px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .page__about .design-process-steps .step {
+    padding: 32px 36px;
+  }
+}
+.page__about .design-process-steps .step h4 {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 25px;
+  margin-bottom: 10px;
+}
+@media only screen and (min-width: 768px) {
+  .page__about .design-process-steps .step h4 {
+    font-size: 18px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .page__about .design-process-steps .step h4 {
+    font-size: 20px;
+  }
+}
+.page__about .design-process-steps .step p {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 140%;
+}
+@media only screen and (min-width: 768px) {
+  .page__about .design-process-steps .step p {
+    font-size: 16px;
+  }
 }
 
 .homepage {
@@ -7632,6 +7839,78 @@ select {
       -ms-flex-pack: end;
           justify-content: flex-end;
   grid-gap: 24px;
+}
+
+.page__visual-design {
+  padding-top: 0;
+  padding-bottom: 56px;
+}
+@media only screen and (min-width: 768px) {
+  .page__visual-design {
+    padding-top: 16px;
+    padding-bottom: 64px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .page__visual-design {
+    padding-top: 52px;
+    padding-bottom: 100px;
+  }
+}
+.page__visual-design__container {
+  padding: 0 30px;
+}
+@media only screen and (min-width: 768px) {
+  .page__visual-design__container {
+    padding: 0 48px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .page__visual-design__container {
+    padding: 0 64px;
+  }
+}
+@media only screen and (min-width: 1224px) {
+  .page__visual-design__container {
+    padding: 0px 96px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .page__visual-design__container {
+    padding: 0px 150px;
+  }
+}
+.page__visual-design__container .projects-gallery {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+@media only screen and (min-width: 768px) {
+  .page__visual-design__container .projects-gallery {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.page__visual-design__container .projects-gallery .project-item {
+  position: relative;
+}
+.page__visual-design__container .projects-gallery .project-item .project-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
 
 /*# sourceMappingURL=frontend.css.map*/
