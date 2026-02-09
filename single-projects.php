@@ -38,7 +38,7 @@ get_header();
 
         <!-- The Brief -->
         <div id="the-brief" class="the-brief tab-section">
-            <div class="bgwhite section-padding">
+            <div class="bgwhite">
                 <div class="max-width">
                     <div class="the-brief-header">
                         <h3><?= get_field("brief_title") ?></h3>
@@ -195,22 +195,25 @@ get_header();
                 if ($researchGroup1['title'] != '') {
                 ?>
                     <div class="research-group-1 bg<?= $researchGroup1['background'] ?> section-padding">
+                        <img class="mobile-only" src="<?= $researchGroup1['image']['url'] ?>" alt="<?= $researchGroup1['image']['title'] ?>" />
                         <div class="max-width">
                             <div class="research-content">
-                                <h3><?= $researchGroup1['title'] ?></h3>
-                                <div class="research-group-1-grid">
-                                    <ul class="list-items">
-                                        <?php
-                                        $items = $researchGroup1['content'];
-                                        foreach ($items as $item) {
-                                        ?>
-                                            <li><?= $item['item'] ?></li>
-                                        <?php
-                                        }
-                                        ?>
-                                    </ul>
-                                    <img src="<?= $researchGroup1['image']['url'] ?>" alt="<?= $researchGroup1['image']['title'] ?>" />
+                                <div>
+                                    <h3><?= $researchGroup1['title'] ?></h3>
+                                    <div class="research-group-1-grid">
+                                        <ul class="list-items">
+                                            <?php
+                                            $items = $researchGroup1['content'];
+                                            foreach ($items as $item) {
+                                            ?>
+                                                <li><?= $item['item'] ?></li>
+                                            <?php
+                                            }
+                                            ?>
+                                        </ul>
+                                    </div>
                                 </div>
+                                <img class="desktop-only" src="<?= $researchGroup1['image']['url'] ?>" alt="<?= $researchGroup1['image']['title'] ?>" />
                             </div>
                         </div>
                     </div>
@@ -232,7 +235,7 @@ get_header();
                             <div class="research-content">
                                 <h3><?= $researchsubGroup1['title'] ?></h3>
                                 <p><?= $researchsubGroup1['content'] ?></p>
-                                <div class="research-group-questions-grid">
+                                <div class="research-group-questions-grid research-group-questions-grid--1">
                                     <?php
                                     $questions = $researchsubGroup1['questions'];
                                     foreach ($questions as $question) {
@@ -240,8 +243,8 @@ get_header();
                                         <div class="research-group-questions-grid--inner">
                                             <h4><?= $question['question'] ?></h4>
                                             <div>
-                                                <span><?= $question['data'] ?></span>
-                                                <p><?= $question['answer'] ?></p>
+                                                <?php if($question['data']) { ?><span><?= $question['data'] ?></span> <?php } ?>
+                                                <?php if($question['answer']) { ?><p><?= $question['answer'] ?></p> <?php } ?>
                                             </div>
                                         </div>
                                     <?php
@@ -297,8 +300,8 @@ get_header();
                                         <div class="research-group-questions-grid--inner">
                                             <h4><?= $question['question'] ?></h4>
                                             <div>
-                                                <span><?= $question['data'] ?></span>
-                                                <p><?= $question['answer'] ?></p>
+                                                <?php if($question['data']) { ?><span><?= $question['data'] ?></span> <?php } ?>
+                                                <?php if($question['answer']) { ?><p><?= $question['answer'] ?></p> <?php } ?>
                                             </div>
                                         </div>
                                     <?php
@@ -541,8 +544,7 @@ get_header();
 
         <div class="page-nav max-width">
             <div class="page-nav--wrapper">
-                <a href="/" class="button">Back to home</a>
-                <a href="#top" class="button">Top</a>
+                <a href="#top" class="button">Back toTop</a>
             </div>
         </div>
     </div>
