@@ -261,12 +261,13 @@ get_header();
                 <?php
                 if ($researchsubGroup2['content'] != '') {
                 ?>
-                    <div class="research-group bg<?= $researchsubGroup2['background'] ?> section-padding">
+                    <div class="research-group research-group-2 bg<?= $researchsubGroup2['background'] ?> section-padding">
+                        <img class="mobile-only" src="<?= $researchsubGroup2['image']['url'] ?>" alt="<?= $researchsubGroup2['image']['title'] ?>" />
                         <div class="max-width">
                             <div class="research-content">
                                 <h3><?= $researchsubGroup2['title'] ?></h3>
                                 <p><?= $researchsubGroup2['content'] ?></p>
-                                <div class="research-group-grid">
+                                <div class="research-group-2-grid">
                                     <ul class="list-items">
                                         <?php
                                         $items = $researchsubGroup2['items'];
@@ -277,7 +278,7 @@ get_header();
                                         }
                                         ?>
                                     </ul>
-                                    <img src="<?= $researchsubGroup2['image']['url'] ?>" alt="<?= $researchsubGroup2['image']['title'] ?>" />
+                                    <img class="desktop-only" src="<?= $researchsubGroup2['image']['url'] ?>" alt="<?= $researchsubGroup2['image']['title'] ?>" />
                                 </div>
                             </div>
                         </div>
@@ -488,11 +489,12 @@ get_header();
                 if ($userTestingGroup['title'] != '') {
                 ?>
                     <div class="user-testing-group bg<?= $userTestingGroup['background'] ?> section-padding">
-                        <div class="max-width">
-                            <h2 class="tab-title">user testing 🦸</h2>
+                        <div>
+                            <h2 class="tab-title max-width">user testing 🦸</h2>
                             <div class="user-testing-content">
-                                <h3><?= $userTestingGroup['title'] ?></h3>
-                                <div class="user-testing-group-grid">
+                                <h3 class="max-width"><?= $userTestingGroup['title'] ?></h3>
+                                <img class="mobile-only" src="<?= $userTestingGroup['image']['url'] ?>" alt="<?= $userTestingGroup['image']['title'] ?>" />
+                                <div class="user-testing-group-grid max-width">
                                     <ul class="list-items">
                                         <?php
                                         $items = $userTestingGroup['content'];
@@ -503,7 +505,7 @@ get_header();
                                         }
                                         ?>
                                     </ul>
-                                    <img src="<?= $userTestingGroup['image']['url'] ?>" alt="<?= $userTestingGroup['image']['title'] ?>" />
+                                    <img class="desktop-only" src="<?= $userTestingGroup['image']['url'] ?>" alt="<?= $userTestingGroup['image']['title'] ?>" />
                                 </div>
                             </div>
                         </div>
@@ -527,9 +529,8 @@ get_header();
                 ?>
                     <div class="takeaways-group bg<?= $takeawaysGroup['background'] ?> section-padding">
                         <div class="max-width">
-                            <h2 class="tab-title">Takeaways 🎁</h2>
+                            <h2 class="tab-title"><?= $takeawaysGroup['title'] ?> 🎁</h2>
                             <div class="takeaways-content">
-                                <h3><?= $takeawaysGroup['title'] ?></h3>
                                 <p><?= $takeawaysGroup['content'] ?></p>
                             </div>
                         </div>
@@ -544,7 +545,73 @@ get_header();
 
         <div class="page-nav max-width">
             <div class="page-nav--wrapper">
-                <a href="#top" class="button">Back toTop</a>
+                <a href="#top" class="button button--with-icon">
+                    <span>Back to Top</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.5 3L13.5 8M13.5 8L8.5 13M13.5 8H2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Other Projects Navigation -->
+        <div class="other-projects-section section-padding">
+            <div class="max-width">
+                <h2 class="section-title">More Projects</h2>
+                <div class="projects-slider-wrapper">
+                    <div class="slider-arrow slider-arrow-prev" aria-label="Previous project">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <path d="M31.667 20.0013L8.33366 20.0013M8.33366 20.0013L20.0003 31.668M8.33366 20.0013L20.0003 8.33464" stroke="#1E1E1E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="projects-slider">
+                        <div class="projects-slider-track">
+                            <?php
+                            // Get other projects excluding the current one
+                            $current_post_id = get_the_ID();
+                            $other_projects = new WP_Query(array(
+                                'post_type' => 'projects',
+                                'posts_per_page' => -1,
+                                'post__not_in' => array($current_post_id),
+                                'orderby' => 'date',
+                                'order' => 'DESC'
+                            ));
+
+                            if ($other_projects->have_posts()) :
+                                while ($other_projects->have_posts()) : $other_projects->the_post();
+                                    $company = get_field('project_name');
+                                    $title = get_field('project_title');
+                                    $description = get_field('short_description') ?: get_field('about_excerpt');
+                            ?>
+                                    <div class="project-card">
+                                        <div class="project-card-content">
+                                            <?php if ($company) : ?>
+                                                <p class="project-company"><?= esc_html($company) ?></p>
+                                            <?php endif; ?>
+                                            <h3 class="project-title"><?= $title ? esc_html($title) : get_the_title() ?></h3>
+                                            <?php if ($description) : ?>
+                                                <p class="project-description"><?= esc_html($description) ?></p>
+                                            <?php endif; ?>
+                                            <a href="<?= get_permalink() ?>" class="button button--outline">
+                                                <span>Read Case Study</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                            <?php
+                                endwhile;
+                                wp_reset_postdata();
+                            endif;
+                            ?>
+                        </div>
+                    </div>
+                    
+                    <div class="slider-arrow slider-arrow-next" aria-label="Next project">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <path d="M8.3335 19.9987H31.6668M31.6668 19.9987L20.0002 8.33203M31.6668 19.9987L20.0002 31.6654" stroke="#1E1E1E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

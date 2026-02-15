@@ -89,9 +89,6 @@ get_header();
                         <?php if (!empty($card['link'])) : ?>
                             <a href="<?= esc_url($card['link']); ?>" class="button button--ghost project-card__button">
                                 <span>Read Case Study</span>
-                                <!-- <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-                                    <path d="M8.5 3L13.5 8M13.5 8L8.5 13M13.5 8H2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg> -->
                             </a>
                         <?php endif; ?>
                     </div>
