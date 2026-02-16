@@ -7,6 +7,7 @@ class App {
 		$ = jQuery
 
 		this.bindMobileMenu();
+		this.initProjectsSlider();
 
 		$(window).scroll(function () {
 			var scrollPos = $(window).scrollTop(),
@@ -82,6 +83,27 @@ class App {
 			}
 		});
 
+	}
+
+	initProjectsSlider() {
+		if (document.querySelector('.projectsSwiper')) {
+			const projectsSwiper = new Swiper('.projectsSwiper', {
+				slidesPerView: 1,
+				spaceBetween: 16,
+				loop: false,
+				speed: 600,
+				navigation: {
+					nextEl: '.slider-arrow-next',
+					prevEl: '.slider-arrow-prev',
+				},
+				breakpoints: {
+					1024: {
+						slidesPerView: 2,
+						spaceBetween: 40,
+					}
+				}
+			});
+		}
 	}
 }
 

@@ -11749,6 +11749,7 @@ class App {
   init() {
     $ = jQuery;
     this.bindMobileMenu();
+    this.initProjectsSlider();
     $(window).scroll(function () {
       var scrollPos = $(window).scrollTop(),
         navH = $('.tabs').height();
@@ -11810,6 +11811,26 @@ class App {
         closeMenu();
       }
     });
+  }
+  initProjectsSlider() {
+    if (document.querySelector('.projectsSwiper')) {
+      const projectsSwiper = new Swiper('.projectsSwiper', {
+        slidesPerView: 1,
+        spaceBetween: 16,
+        loop: false,
+        speed: 600,
+        navigation: {
+          nextEl: '.slider-arrow-next',
+          prevEl: '.slider-arrow-prev'
+        },
+        breakpoints: {
+          1024: {
+            slidesPerView: 2,
+            spaceBetween: 40
+          }
+        }
+      });
+    }
   }
 }
 new App(document.querySelector("main"), false);

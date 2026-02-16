@@ -557,16 +557,11 @@ get_header();
         <!-- Other Projects Navigation -->
         <div class="other-projects-section section-padding">
             <div class="max-width">
-                <h2 class="section-title">More Projects</h2>
+                <h2 class="section-title">Keep Reading</h2>
+                <p class="section-sub-title">More examples of design that drives results.</p>
                 <div class="projects-slider-wrapper">
-                    <div class="slider-arrow slider-arrow-prev" aria-label="Previous project">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-                            <path d="M31.667 20.0013L8.33366 20.0013M8.33366 20.0013L20.0003 31.668M8.33366 20.0013L20.0003 8.33464" stroke="#1E1E1E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    
-                    <div class="projects-slider">
-                        <div class="projects-slider-track">
+                    <div class="swiper projectsSwiper">
+                        <div class="swiper-wrapper">
                             <?php
                             // Get other projects excluding the current one
                             $current_post_id = get_the_ID();
@@ -584,18 +579,20 @@ get_header();
                                     $title = get_field('project_title');
                                     $description = get_field('short_description') ?: get_field('about_excerpt');
                             ?>
-                                    <div class="project-card">
-                                        <div class="project-card-content">
-                                            <?php if ($company) : ?>
-                                                <p class="project-company"><?= esc_html($company) ?></p>
-                                            <?php endif; ?>
-                                            <h3 class="project-title"><?= $title ? esc_html($title) : get_the_title() ?></h3>
-                                            <?php if ($description) : ?>
-                                                <p class="project-description"><?= esc_html($description) ?></p>
-                                            <?php endif; ?>
-                                            <a href="<?= get_permalink() ?>" class="button button--outline">
-                                                <span>Read Case Study</span>
-                                            </a>
+                                    <div class="swiper-slide">
+                                        <div class="project-card">
+                                            <div class="project-card-content">
+                                                <?php if ($company) : ?>
+                                                    <p class="project-company"><?= esc_html($company) ?></p>
+                                                <?php endif; ?>
+                                                <h3 class="project-title"><?= $title ? esc_html($title) : get_the_title() ?></h3>
+                                                <?php if ($description) : ?>
+                                                    <p class="project-description"><?= esc_html($description) ?></p>
+                                                <?php endif; ?>
+                                                <a href="<?= get_permalink() ?>" class="button button--ghost project-card__button">
+                                                    <span>Read Case Study</span>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                             <?php
@@ -604,6 +601,12 @@ get_header();
                             endif;
                             ?>
                         </div>
+                    </div>
+                    
+                    <div class="slider-arrow slider-arrow-prev" aria-label="Previous project">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <path d="M31.667 20.0013L8.33366 20.0013M8.33366 20.0013L20.0003 31.668M8.33366 20.0013L20.0003 8.33464" stroke="#1E1E1E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                     </div>
                     
                     <div class="slider-arrow slider-arrow-next" aria-label="Next project">
@@ -619,3 +622,4 @@ get_header();
 
 <?php
 get_footer();
+
