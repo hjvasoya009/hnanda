@@ -1,191 +1,250 @@
-.home {
-    position: relative;
+@use "sass:map";
 
-    .intro {
-        position: relative;
-        top: -72px;
-        max-width: 522px;
-        margin-bottom: 24px;
+.homepage {
+    background: #fff;
+    padding-top: 0;
+    padding-bottom: 56px;
 
-        p {
-            font-family: map-get($fonts, "primaryfont");
-            font-weight: 400;
-            font-size: 24px;
-            line-height: 40px;
+    @include breakpoint("sm") {
+        padding-top: 16px;
+        padding-bottom: 64px;
+    }
 
-            span {
-                font-style: italic;
-                font-family: map-get($fonts, "secondaryfont");
-            }
+    @include breakpoint("md") {
+        padding-top: 52px;
+        padding-bottom: 100px;
+    }
+
+    &__container {
+        padding: 0 30px;
+
+        @include breakpoint("sm") {
+            padding: 0 48px;
+        }
+
+        @include breakpoint("md") {
+            padding: 0 64px;
+        }
+
+        @include breakpoint("lg") {
+            padding: 0px 96px;
+        }
+
+        @include breakpoint("xlg") {
+            padding: 0px 150px;
         }
     }
 
-    .projects {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-gap: 32px;
+    &__intro {
+        max-width: 700px;
+        margin: 0 auto 54px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        gap: 16px;
 
-        @include breakpoint(sm) {
-            grid-template-columns: 1fr 1fr;
-            grid-gap: 64px;
-        }
 
-        @include breakpoint(lg) {
-            grid-gap: 96px;
-        }
-    }
-
-    .project {
-        border-radius: 5px;
-        transition: 0.4s;
-        background-size: cover;
-        background-position: center;
-
-        &:nth-of-type(even) {
-            position: relative;
-
-            @include breakpoint(lg) {
-                top: -180px;
-            }
-        }
-
-        &--inner {
-            display: flex;
-            justify-content: space-between;
-            flex-direction: column;
-            opacity: 0;
-            min-height: 580px;
-            padding: 48px 32px;
-
-            @include breakpoint(lg) {
-                min-height: 712px;
-                padding: 80px;
-            }
-        }
-
-        &:hover {
-            background-image: unset !important;
-            background: #F6BC9B;
-
-            .project--inner {
-                opacity: 1;
-            }
-        }
-
-        &-title {
-            font-style: italic;
-            font-family: map-get($fonts, "secondaryfont");
-            font-size: 32px;
-            line-height: 48px;
-
-            @include breakpoint(lg) {
-                font-size: 50px;
-                line-height: 68px;
-            }
-        }
-
-        &-meta {
-            display: flex;
-            justify-content: space-between;
-            flex-direction: column;
-            grid-gap: 40px;
-
-            &-content {
-                display: flex;
-                grid-gap: 8px;
-                align-items: flex-start;
-
-                img {
-                    margin-top: 4px;
-                }
-            }
-
-            p {
-                font-size: 24px;
-                line-height: 36px;
-            }
-
-            &--heading {
-                font-weight: 400;
-            }
-
-            &--content {
-                font-weight: 300;
-            }
-        }
-
-        &-cta {
+        @include breakpoint("md") {
+            max-width: 700px;
+            margin: 0 auto 90px;
+            align-items: center;
             text-align: center;
-
-            a {
-                color: black;
-                font-family: map-get($fonts, "primaryfont");
-                font-weight: 300;
-                font-size: 24px;
-                line-height: 36px;
-                text-transform: lowercase;
-                display: inline-block;
-                text-decoration: underline;
-
-                &:hover {
-                    font-family: map-get($fonts, "secondaryfont");
-                    font-weight: 400;
-                    font-style: italic;
-                }
-            }
+            display: flex;
+            flex-direction: column;
+            gap: 0;
         }
     }
 
-    .bg-overlay {
-        position: absolute;
-        bottom: 0;
-        top: 50%;
+    &__intro-line {
+        margin: 0;
+
+        @include breakpoint("md") {
+            font-size: 20px;
+            line-height: 30px;
+        }
+    }
+
+    &__projects {
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+
+        @include breakpoint("sm") {
+            gap: 64px;
+        }
+    }
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background: #fff;
+    min-height: auto;
+
+    &--media-right,
+    &--media-left {
+        .project-card__media {
+            order: 1;
+        }
+
+        .project-card__info {
+            order: 2;
+        }
+    }
+
+    @include breakpoint("md") {
+        display: grid;
+        grid-template-columns: 1.8fr 1fr;
+        padding: 0;
+        min-height: 520px;
+        gap: unset;
+
+        &--media-right {
+            grid-template-columns: 1fr 1.8fr;
+
+            .project-card__media {
+                order: 2;
+            }
+
+            .project-card__info {
+                order: 1;
+            }
+        }
+
+        &--media-left {
+            grid-template-columns: 1.8fr 1fr;
+
+            .project-card__media {
+                order: 1;
+            }
+
+            .project-card__info {
+                order: 2;
+            }
+        }
+
+    }
+
+    &__media {
+        border-radius: 0;
+        overflow: hidden;
+        min-height: 260px;
+        display: flex;
+        align-items: stretch;
+        justify-content: stretch;
+        padding: 0;
+        position: relative;
+
+        @include breakpoint("md") {
+            min-height: 520px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+            position: relative;
+            z-index: 2;
+        }
+    }
+
+    &__media-placeholder {
         width: 100%;
-        background: url('../assets/images/purple-bg.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        z-index: -9;
+        height: 100%;
+        background: linear-gradient(135deg, #efefef 0%, #dcdcdc 50%, #efefef 100%);
     }
 
-    .footer {
-        &__content {
+    &__media.media--red-diagonal {
+        background: none;
 
-            &-contact {
-
-                .tagline {
-                    color: white;
-
-                    #word-switcher {
-                        label {
-                            border-bottom: 2px solid #fff;
-                        }
-                    }
-                }
-
-                .email {
-                    color: white;
-
-                    a {
-                        color: white;
-                    }
-                }
-            }
-
-            &-nav {
-                color: white;
-
-                &--wrapper {
-                    background: transparent;
-                }
-
-                .nav {
-
-                    a {
-                        color: white;
-                    }
-                }
-            }
+        &::after {
+            display: none;
         }
+    }
+
+    &__media.has-image {
+        padding: 0;
+
+        @include breakpoint("md") {
+            min-height: 520px;
+        }
+    }
+
+    &__media.media--split-red {
+        background: linear-gradient(180deg, #dedede 0% 56%, #e1192d 56% 100%);
+    }
+
+    &__media.media--neutral {
+        background: #e8e8e8;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        padding: 28px;
+        border-radius: 0;
+        border: 1px solid #E9E9E9;
+
+        @include breakpoint("md") {
+            padding: 32px;
+        }
+
+        @include breakpoint("lg") {
+            padding: 44px;
+        }
+    }
+
+    &__label {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 15px;
+        text-transform: uppercase;
+
+        @include breakpoint("md") {
+            font-size: 16px;
+            line-height: 120%;
+        }
+    }
+
+    &__title {
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 25px;
+        margin: 0;
+
+        @include breakpoint("sm") {
+            font-size: 22px;
+            line-height: 28px;
+        }
+
+        @include breakpoint("md") {
+            font-size: 25px;
+            line-height: 30px;
+        }
+    }
+
+    &__description {
+        margin: 0;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 140%;
+
+        @include breakpoint("md") {
+            font-size: 16px;
+        }
+    }
+
+    &__button {
+        align-self: flex-start;
     }
 }

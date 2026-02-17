@@ -1,7 +1,8 @@
+@use "sass:map";
 /**
 *
 * 		Header
-*			- The header styles will go hehre
+*			- Clean, minimal header styles
 *     
 *
 **/
@@ -11,75 +12,111 @@
         &-wrapper {
             display: flex;
             justify-content: space-between;
-            padding-top: 48px;
-            padding-bottom: 48px;
+            align-items: center;
+            padding: 36px 30px;
+
+            @include breakpoint("sm") {
+                padding: 36px 48px;
+            }
+
+            @include breakpoint("md") {
+                padding: 36px 64px;
+            }
+
+            @include breakpoint("lg") {
+                padding: 40px 96px;
+            }
+
+            @include breakpoint("xlg") {
+                padding: 40px 150px;
+            }
         }
 
         &-logo {
-            svg {
-                path {
-                    fill: black;
-                    transition: 0.3s;
-                }
-            }
+            .inner-logo {
+                color: #000;
+                font-family: "Albert Sans";
+                font-size: 30px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 83.184%;
 
-            &:hover {
-                svg {
-                    path {
-                        fill: #A18CBB;
-                    }
+                .logo-mobile {
+                    display: none;
                 }
             }
         }
 
         &-menu {
             .menu-primary {
-                text-align: right;
                 display: flex;
-                flex-direction: column;
-                grid-gap: 12px;
-                min-width: 150px;
+                align-items: center;
+                gap: 40px;
+                margin: 0;
+                padding: 0;
+                list-style: none;
 
                 li {
                     a {
-                        text-transform: lowercase;
-                        font-family: map-get($fonts, "primaryfont");
-                        color: map-get($colors, "black");
+                        font-size: 20px;
+                        line-height: normal;
+                        color: map.get($colors, "black");
                         font-weight: 300;
-                        font-size: 22px;
-                        line-height: 26px;
-                        display: flex;
-                        grid-gap: 12px;
-                        justify-content: end;
+                        text-decoration: none;
+                        transition: opacity 0.3s ease;
+                        display: inline-block;
 
-                        span {
-                            &:first-of-type {
-                                border-bottom: 2px solid transparent;
-                            }
-
-                            &:last-of-type {
-                                display: none;
-                            }
+                        &:hover {
+                            opacity: 0.7;
                         }
                     }
 
-                    &.current-menu-item,
-                    &:hover {
+                    &.current-menu-item {
                         a {
-                            font-family: map-get($fonts, "secondaryfont");
-                            font-weight: 400;
-
-                            span {
-                                &:first-of-type {
-                                    border-bottom-color: map-get($colors, "black");
-                                    font-style: italic;
-                                }
-
-                                &:last-of-type {
-                                    display: inline-block;
-                                }
-                            }
+                            font-weight: 700;
+                            font-style: italic;
+                            color: #7449A9;
                         }
+                    }
+                }
+            }
+        }
+
+        &-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            padding: 8px;
+            margin-left: 16px;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+
+            span {
+                display: block;
+                width: 22px;
+                height: 2px;
+                background: #000;
+            }
+        }
+
+        @media (max-width: 900px) {
+            &-menu {
+                display: none;
+            }
+
+            &-toggle {
+                display: flex;
+            }
+
+            &-logo {
+                .inner-logo {
+                    .logo-desktop {
+                        display: none;
+                    }
+
+                    .logo-mobile {
+                        display: inline;
                     }
                 }
             }

@@ -271,6 +271,12 @@ add_action('wp_enqueue_scripts', function () {
 	$manifest = json_decode(file_get_contents('build/assets.json', true));
 	$main = $manifest->frontend;
 
+	// Swiper CSS
+	wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', [], '11.0.0');
+	
+	// Swiper JS
+	wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', [], '11.0.0', true);
+	
 	wp_enqueue_script('aos-js', get_template_directory_uri() . "/src/scripts/libraries/aos.js", ['jquery'], null, true);
 	wp_enqueue_style('theme-css', get_template_directory_uri() . "/build/" . $main->css,  false, null);
 	wp_enqueue_script('theme-js', get_template_directory_uri() . "/build/" . $main->js, ['jquery'], null, true);

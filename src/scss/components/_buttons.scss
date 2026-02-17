@@ -1,32 +1,91 @@
 /**
 *
 * 		BUTTONS
-*			- Add any button styles in here.
-* 			- Below is grouped into a buttons list but the .button is also accessible directly
+*			- Reusable button component styles
+* 			- Can be used with or without icons
 *
 **/
 
-
-//Single Button
 .button {
-	transition: 0.5s;
-	color: black;
-	background: #F6BC9B;
-	border: 1px solid #F6BC9B;
-	font-weight: 300;
-	font-size: 24px;
-	line-height: 36px;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	gap: 12px;
+	padding: 10px 26px;
+	background: transparent;
+	border: 1px solid #000;
+	color: #000;
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 400;
+	text-decoration: none;
+	transition: all 0.3s ease;
 	cursor: pointer;
-	padding: 8px 24px;
-	border-radius: 5px;
 
-	//Small Button
-	&.small {}
-
-	//Large Button
-	&.large {}
+	// Icon inside button
+	svg {
+		width: 16px;
+		height: 16px;
+		transition: transform 0.3s ease;
+		rotate: -45deg;
+	}
 
 	&:hover {
-		background: transparent;
+		background: #000;
+		color: #fff;
+		border-color: #000;
+
+		svg {
+			transform: translateX(4px);
+		}
+	}
+
+	// Button with icon
+	&--with-icon {
+		// Inherits all base button styles
+	}
+
+	// Small variant
+	&--small {
+		padding: 12px 24px;
+		font-size: 14px;
+		line-height: 20px;
+	}
+
+	// Ghost/outline style
+	&--ghost {
+		padding: 12px 20px;
+		border-color: #b3b3b3;
+		color: #111;
+
+		svg {
+			width: 14px;
+			height: 14px;
+		}
+
+		&:hover {
+			background: #000;
+			color: #fff;
+			border-color: #000;
+		}
+	}
+
+	// Large variant
+	&--large {
+		padding: 20px 40px;
+		font-size: 18px;
+		line-height: 28px;
+	}
+
+	// Primary style
+	&--primary {
+		background: #000;
+		color: #fff;
+		border-color: #000;
+
+		&:hover {
+			background: transparent;
+			color: #000;
+		}
 	}
 }

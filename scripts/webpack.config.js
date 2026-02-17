@@ -7,8 +7,7 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const path = require('path');
 const fs = require('fs');
 const globImporter = require('node-sass-glob-importer');
@@ -43,7 +42,8 @@ module.exports = {
   },
   output: {
     path: paths.appBuild,
-    filename: DEV ? '[name].js' : '[name].[hash:8].js',
+    filename: DEV ? '[name].js' : '[name].[contenthash:8].js',
+    publicPath: '',
   },
   module: {
     rules: [
@@ -69,19 +69,22 @@ module.exports = {
             loader: "postcss-loader",
             options: {
               sourceMap: true,
-              ident: "postcss", // https://webpack.js.org/guides/migrating/#complex-options
-              plugins: () => [
-                autoprefixer({
-                  grid: "no-autoplace"
-                })
-              ]
+              postcssOptions: {
+                plugins: [
+                  autoprefixer({
+                    grid: "no-autoplace"
+                  })
+                ]
+              }
             }
           },
           {
             loader: "sass-loader",
             options: {
               sourceMap: true,
-              importer: globImporter()
+              sassOptions: {
+                importer: globImporter()
+              }
             }
           }
         ],
@@ -113,13 +116,15 @@ module.exports = {
   optimization: {
     minimize: !DEV,
     minimizer: [
-      new OptimizeCSSAssetsPlugin({
-        cssProcessorOptions: {
-          map: {
-            inline: false,
-            annotation: true,
-          }
-        }
+      new CssMinimizerPlugin({
+        minimizerOptions: {
+          preset: [
+            'default',
+            {
+              discardComments: { removeAll: true },
+            },
+          ],
+        },
       }),
       new TerserPlugin({
         terserOptions: {
@@ -129,15 +134,14 @@ module.exports = {
           output: {
             comments: false
           }
-        },
-        sourceMap: true
+        }
       })
     ]
   },
   plugins: [
     !DEV && new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: DEV ? '[name].css' : '[name].[hash:8].css'
+      filename: DEV ? '[name].css' : '[name].[contenthash:8].css'
     }),
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'development', // use 'development' unless process.env.NODE_ENV is defined
@@ -146,10 +150,6 @@ module.exports = {
     new AssetsPlugin({
       path: paths.appBuild,
       filename: 'assets.json',
-    }),
-    DEV &&
-    new FriendlyErrorsPlugin({
-      clearConsole: false,
     }),
     DEV &&
     new BrowserSyncPlugin({

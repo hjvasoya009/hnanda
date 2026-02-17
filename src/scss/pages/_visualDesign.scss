@@ -1,0 +1,59 @@
+.page__visual-design {
+    padding-top: 0;
+    padding-bottom: 56px;
+
+    @include breakpoint("sm") {
+        padding-top: 16px;
+        padding-bottom: 64px;
+    }
+
+    @include breakpoint("md") {
+        padding-top: 52px;
+        padding-bottom: 100px;
+    }
+
+    &__container {
+        padding: 0 30px;
+
+        @include breakpoint("sm") {
+            padding: 0 48px;
+        }
+
+        @include breakpoint("md") {
+            padding: 0 64px;
+        }
+
+        @include breakpoint("lg") {
+            padding: 0px 96px;
+        }
+
+        @include breakpoint("xlg") {
+            padding: 0px 150px;
+        }
+
+        .projects-gallery {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+
+            @include breakpoint("sm") {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .project-item {
+                position: relative;
+
+                .project-name {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                }
+            }
+        }
+    }
+}

@@ -1,3 +1,4 @@
+@use "sass:map";
 /**
 *
 * 		Footer
@@ -6,138 +7,173 @@
 **/
 
 .footer {
-	padding-top: 200px;
+	background: #f2e9f7;
 
-	&__container {}
+	&__container {
+		padding: 37px 30px;
 
-	&__content {
-		&-icons {
-			padding-bottom: 130px;
-
-			p {
-				text-align: center;
-				font-size: 36px;
-				line-height: 36px;
-			}
+		@include breakpoint("sm") {
+			padding: 37px 48px;
+			padding-top: 48px;
 		}
 
-		&-contact {
-			padding-bottom: 170px;
-
-			.tagline {
-				text-align: center;
-				font-family: map-get($fonts, "secondaryfont");
-				font-size: 40px;
-				line-height: 54px;
-				padding-bottom: 24px;
-
-				@include breakpoint(lg) {
-					font-size: 55px;
-					line-height: 70px;
-				}
-
-				#word-switcher {
-					font-style: italic;
-
-					position: relative;
-					padding-right: 192.30px;
-
-					label {
-						border-bottom: 2px solid #000;
-
-						position: absolute;
-						opacity: 0;
-
-						&.active {
-							opacity: 1;
-							animation: fade 2s ease-in-out infinite;
-						}
-					}
-				}
-			}
-
-			.email {
-				text-align: center;
-				font-size: 40px;
-				line-height: 54px;
-				font-weight: 300;
-
-				@include breakpoint(lg) {
-					font-size: 55px;
-					line-height: 70px;
-				}
-
-				a {
-					font-weight: 400;
-					font-size: 22px;
-					line-height: 36px;
-					text-transform: uppercase;
-					color: black;
-					letter-spacing: 0.12em;
-					position: relative;
-					padding: 0;
-					top: -32px;
-					text-decoration: none;
-					display: inline-block;
-					border-bottom: 2px solid;
-				}
-			}
+		@include breakpoint("md") {
+			padding: 37px 64px;
+			padding-top: 64px;
 		}
 
-		&-nav {
-			display: flex;
-			justify-content: space-between;
+		@include breakpoint("lg") {
+			padding: 37px 96px;
+			padding-top: 96px;
+		}
+
+		@include breakpoint("xlg") {
+			padding: 37px 150px;
+			padding-top: 105px;
+		}
+	}
+
+	&__cta {
+		background: #fff;
+		border-radius: 0px;
+		padding: 30px;
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+		justify-content: space-between;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		box-shadow: 0 24px 60px rgba(0, 0, 0, 0.06);
+
+		@include breakpoint("md") {
+			padding: 30px 48px;
+			flex-direction: row;
 			align-items: center;
-			height: 50px;
+		}
 
-			&--wrapper {
-				background: #A18CBB;
+		@include breakpoint("lg") {
+			padding: 30px 55px;
+		}
+
+		&-content {
+			flex: 1;
+			max-width: 420px;
+
+			@include breakpoint("lg") {
+				max-width: 512px;
 			}
+		}
 
-			.nav {
-				display: flex;
-				grid-gap: 24px;
+		&-title {
+			font-size: 20px;
+			font-style: normal;
+			font-weight: 700;
+			line-height: 25px;
+			color: #000;
 
-				a {
-					color: black;
-					font-weight: 400;
-					font-size: 24px;
-					line-height: 36px;
-
-					&:hover {
-						text-decoration: underline;
-					}
-				}
-			}
-
-			.copyright {
-				font-weight: 400;
+			@include breakpoint("md") {
 				font-size: 24px;
-				line-height: 36px;
+				line-height: 32px;
+			}
+
+			@include breakpoint("lg") {
+				font-size: 31px;
+				line-height: 40px;
+			}
+		}
+
+		&-subtitle {
+			margin: 0;
+			padding-top: 10px;
+			color: #000;
+			font-size: 14px;
+			font-style: normal;
+			font-weight: 300;
+			line-height: 140%;
+
+			@include breakpoint("md") {
+				font-size: 17px;
+				line-height: 145%;
+			}
+
+			@include breakpoint("lg") {
+				font-size: 20px;
+				line-height: 150%;
+			}
+		}
+
+		&-buttons {
+			display: flex;
+			flex-direction: column;
+			gap: 12px;
+			width: 100%;
+
+			@include breakpoint("sm") {
+				flex-direction: row;
+				width: auto;
+			}
+
+			@include breakpoint("xlg") {
+				gap: 48px;
 			}
 		}
 	}
-}
 
+	&__bottom {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-top: 37px;
+		color: #000;
+		font-size: 14px;
 
-@keyframes fade {
-	0% {
-		opacity: 0;
-		transform: translateY(-50%);
+		@include breakpoint("sm") {
+			padding-top: 48px;
+		}
+
+		@include breakpoint("md") {
+			padding-top: 64px;
+		}
+
+		@include breakpoint("lg") {
+			padding-top: 96px;
+		}
+
+		@include breakpoint("xlg") {
+			padding-top: 105px;
+		}
 	}
 
-	25% {
-		opacity: 1;
-		transform: translateY(0%);
+	&__links {
+		display: flex;
+		gap: 20px;
+
+		a {
+			color: #000;
+			text-decoration: none;
+			font-size: 14px;
+			font-weight: 300;
+			transition: opacity 0.25s ease;
+
+			@include breakpoint("md") {
+				font-size: 20px;
+				line-height: 30px;
+			}
+
+			&:hover {
+				opacity: 0.6;
+			}
+		}
 	}
 
-	75% {
-		opacity: 1;
-		transform: translateY(0%);
-	}
+	&__copyright {
+		color: #000;
+		font-size: 14px;
+		font-weight: 300;
 
-	100% {
-		opacity: 0;
-		transform: translateY(50%);
+		@include breakpoint("md") {
+			font-size: 20px;
+			line-height: 30px;
+		}
 	}
 }
