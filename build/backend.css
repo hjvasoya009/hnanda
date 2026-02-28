@@ -78,12 +78,44 @@
   color: #F4F4F4;
 }
 
-.bggreen {
+.bgdarkgreen {
   background: #3D8D6F;
 }
 
-.colorgreen {
+.colordarkgreen {
   color: #3D8D6F;
+}
+
+.bglightred {
+  background: #FBE5E7;
+}
+
+.colorlightred {
+  color: #FBE5E7;
+}
+
+.bgcyan {
+  background: #71AFC7;
+}
+
+.colorcyan {
+  color: #71AFC7;
+}
+
+.bgbrightyellow {
+  background: #F2CABE;
+}
+
+.colorbrightyellow {
+  color: #F2CABE;
+}
+
+.bgskyblue {
+  background: #9BD5DE;
+}
+
+.colorskyblue {
+  color: #9BD5DE;
 }
 
 /**

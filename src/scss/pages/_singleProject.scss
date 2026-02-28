@@ -274,6 +274,20 @@
                     }
                 }
 
+                &-target_users {
+                    p {
+                        margin-bottom: 14px;
+                    }
+
+                    li {
+                        margin-bottom: 16px;
+
+                        &:last-of-type {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+
                 &-group-2-grid {
                     display: flex;
                     flex-direction: column;
@@ -305,6 +319,83 @@
                     margin-bottom: 24px;
                 }
 
+                .competitive_benchmarking {
+                    &-content {
+                        margin-bottom: 24px;
+
+                        @include breakpoint("sm") {
+                            margin-bottom: 36px;
+                        }
+                    }
+
+                    &-table {
+                        &--mobile {
+                            display: block;
+
+                            @include breakpoint("md") {
+                                display: none;
+                            }
+
+                            &-row {
+                                padding-bottom: 20px;
+                                margin-bottom: 20px;
+                                border-bottom: 1px solid #000;
+
+                                &:last-of-type {
+                                    padding-bottom: 0;
+                                    margin-bottom: 0;
+                                    border-bottom: unset;
+                                }
+
+                                p {
+                                    margin-bottom: 8px;
+
+                                    strong {
+                                        font-weight: 700;
+                                    }
+
+                                    &:last-of-type {
+                                        margin-bottom: 0;
+                                    }
+                                }
+                            }
+                        }
+
+                        &--desktop {
+                            display: none;
+
+                            @include breakpoint("md") {
+                                display: block;
+                            }
+
+                            tr {
+                                display: grid;
+                                grid-template-columns: 0.6fr 1fr 1fr;
+                                gap: 56px;
+                                text-align: left;
+                                padding: 24px 36px;
+                                border-bottom: 1px solid rgba(0, 0, 0, 0.50);
+
+                                &:first-of-type {
+                                    background: rgba(217, 217, 217, 0.50);
+                                    border-bottom: unset;
+                                }
+
+                                &:last-of-type {
+                                    border-bottom: unset;
+                                    padding-bottom: 0;
+                                }
+
+                                td {
+                                    &:first-of-type {
+                                        font-weight: 700;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
                 &-group {
                     &-questions-grid {
                         display: grid;
@@ -320,13 +411,13 @@
                             gap: 28px;
                         }
 
-                        &--1 {
-                            margin-top: 24px;
+                        // &--1 {
+                        //     margin-top: 24px;
 
-                            @include breakpoint("sm") {
-                                margin-top: 36px;
-                            }
-                        }
+                        //     @include breakpoint("sm") {
+                        //         margin-top: 36px;
+                        //     }
+                        // }
 
                         &--inner {
                             display: flex;
@@ -339,6 +430,10 @@
 
                             @include breakpoint("md") {
                                 gap: 20px;
+                            }
+
+                            p {
+                                margin-bottom: 0 !important;
                             }
                         }
 
@@ -358,21 +453,30 @@
                         }
 
                         span {
-                            font-size: 16px;
+                            font-size: 14px;
                             font-style: normal;
                             font-weight: 700;
-                            line-height: 25px;
-                        }
+                            line-height: 140%;
 
-                        p {
-                            font-size: 16px;
-                            font-style: normal;
-                            font-weight: 700;
-                            line-height: 25px;
+                            @include breakpoint("sm") {
+                                font-size: 16px;
+                            }
                         }
                     }
 
-                    &-sub-3 {
+                    &-2-sub-1 {
+                        .research-content {
+                            p {
+                                margin-bottom: 24px;
+
+                                @include breakpoint("sm") {
+                                    margin-bottom: 36px;
+                                }
+                            }
+                        }
+                    }
+
+                    &-2-sub-3 {
                         &-questions-grid {
                             margin-top: 0;
                         }
@@ -427,11 +531,24 @@
                     .list-items {
                         li {
                             margin-bottom: 16px;
+
+                            &:last-of-type {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+
+                    &.research_insights,
+                    &.informed_design {
+                        .research-content {
+                            &-description {
+                                margin-bottom: 16px;
+                            }
                         }
                     }
                 }
 
-                &-group-2 {
+                &-group-2-sub-2 {
                     display: flex;
                     flex-direction: column;
 
@@ -475,19 +592,47 @@
                     &-questions-grid {
                         margin-top: 0;
                     }
+
+                    .research-content {
+                        p {
+                            margin-bottom: 22px;
+                        }
+                    }
                 }
             }
 
             .problem {
-                &-statement {
 
-                    h3,
-                    p {
-                        color: white;
+                &-content {
+
+                    &-description {
+                        margin-bottom: 16px;
+                    }
+
+                    li {
+                        margin-bottom: 16px;
+
+                        &:last-of-type {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+
+                &-statement {
+                    margin-bottom: 24px;
+
+                    @include breakpoint("sm") {
+                        margin-bottom: 32px;
+                    }
+
+                    @include breakpoint("md") {
+                        margin-bottom: 40px;
                     }
                 }
 
                 &-userflow {
+                    padding-top: 0;
+
                     img {
                         border: 1px solid #000;
                         margin-top: 36px;
@@ -508,6 +653,18 @@
                     img {
                         margin-top: 64px;
                     }
+
+                    ul.list-items {
+                        margin-top: 16px;
+
+                        li {
+                            margin-bottom: 16px;
+
+                            &:last-of-type {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
                 }
 
                 &-prototype {
@@ -520,6 +677,27 @@
 
                 &-impact {
                     padding-bottom: 0;
+                    margin-bottom: 24px;
+
+                    @include breakpoint("sm") {
+                        margin-bottom: 32px;
+                    }
+
+                    @include breakpoint("md") {
+                        margin-bottom: 40px;
+                    }
+
+                    ul.list-items {
+                        margin-top: 16px;
+
+                        li {
+                            margin-bottom: 16px;
+
+                            &:last-of-type {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
                 }
             }
 
@@ -553,6 +731,10 @@
                             }
                         }
                     }
+                }
+
+                &-content-description {
+                    margin-bottom: 16px;
                 }
             }
 
@@ -728,56 +910,69 @@
                     }
                 }
 
-                .slider-arrow {
-                    position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    width: 24px;
-                    height: 24px;
-                    background: transparent;
-                    border: none;
+                .projects-slider-navigation-arrows {
+                    margin-top: 16px;
                     display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    cursor: pointer;
-                    transition: all 0.3s ease;
-                    flex-shrink: 0;
-                    z-index: 10;
-                    padding: 0;
+                    justify-content: flex-end;
+                    gap: 24px;
 
-                    svg {
+                    @include breakpoint("sm") {
+                        margin-top: 0;
+                    }
+
+                    .slider-arrow {
                         width: 24px;
                         height: 24px;
-                        color: #000;
-                        transition: transform 0.2s ease;
-                    }
+                        background: transparent;
+                        border: none;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        flex-shrink: 0;
+                        z-index: 10;
+                        padding: 0;
 
-                    &:hover {
-                        svg {
-                            transform: scale(1.1);
+                        @include breakpoint("sm") {
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
                         }
-                    }
 
-                    &.swiper-button-disabled {
-                        opacity: 0.3;
-                        cursor: not-allowed;
+                        svg {
+                            width: 24px;
+                            height: 24px;
+                            color: #000;
+                            transition: transform 0.2s ease;
+                        }
 
                         &:hover {
                             svg {
-                                transform: scale(1);
+                                transform: scale(1.1);
+                            }
+                        }
+
+                        &.swiper-button-disabled {
+                            opacity: 0.3;
+                            cursor: not-allowed;
+
+                            &:hover {
+                                svg {
+                                    transform: scale(1);
+                                }
                             }
                         }
                     }
-                }
 
-                .slider-arrow-prev {
-                    left: -24px;
-                }
+                    .slider-arrow-prev {
+                        left: -24px;
+                    }
 
-                .slider-arrow-next {
-                    right: -24px;
+                    .slider-arrow-next {
+                        right: -24px;
+                    }
                 }
-
             }
         }
     }
