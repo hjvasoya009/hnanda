@@ -268,7 +268,7 @@ add_image_size('50-50', 1000);
  * Frontend assets
  */
 add_action('wp_enqueue_scripts', function () {
-	$manifest = json_decode(file_get_contents('build/assets.json', true));
+	$manifest = json_decode(file_get_contents(get_template_directory() . '/build/assets.json', true));
 	$main = $manifest->frontend;
 
 	// Swiper CSS
@@ -287,7 +287,7 @@ add_action('wp_enqueue_scripts', function () {
  * Admin assets
  */
 add_action('admin_enqueue_scripts', function () {
-	$manifest = json_decode(file_get_contents('build/assets.json', true));
+	$manifest = json_decode(file_get_contents(get_template_directory() . '/build/assets.json', true));
 	$main = $manifest->backend;
 	wp_enqueue_style('theme-css', get_template_directory_uri() . "/build/" . $main->css,  false, null);
 	wp_enqueue_script('theme-js', get_template_directory_uri() . "/build/" . $main->js, ['jquery'], null, true);
@@ -297,7 +297,7 @@ add_action('admin_enqueue_scripts', function () {
  * Login assets
  */
 add_action('login_enqueue_scripts', function () {
-	$manifest = json_decode(file_get_contents('build/assets.json', true));
+	$manifest = json_decode(file_get_contents(get_template_directory() . '/build/assets.json', true));
 	$main = $manifest->backend;
 	wp_enqueue_style('theme-css', get_template_directory_uri() . "/build/" . $main->css,  false, null);
 	wp_enqueue_script('theme-js', get_template_directory_uri() . "/build/" . $main->js, ['jquery'], null, true);
