@@ -6,7 +6,7 @@
     "start": "cross-env NODE_ENV=development NODE_OPTIONS=--openssl-legacy-provider node ./scripts/start.js",
     "build": "cross-env NODE_ENV=production NODE_OPTIONS=--openssl-legacy-provider node ./scripts/build.js",
     "dp:staging": "git push origin master && ssh -p 65002 u380944048@191.96.63.202 \"cd domains/staging.hiteshrinanda.com/public_html/wp-content/themes/hnanda && git pull origin master \"",
-    "dp:prod": "git push origin master && ssh -p 65002 u380944048@191.96.63.202 \"cd domains/hiteshrinanda.com/public_html/wp-content/themes/hnanda && git pull origin master \"",
+    "dp:prod": "git push origin master && ssh -p 65002 u380944048@191.96.63.202 \"cd domains/hiteshrinanda.com/public_html/wp-content/themes/hnanda && git pull origin master && npm run build \"",
     "postinstall": "npm run build"
   },
   "author": "",
