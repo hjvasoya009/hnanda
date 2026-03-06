@@ -275,6 +275,8 @@
                 }
 
                 &-target_users {
+                    max-width: 810px;
+
                     p {
                         margin-bottom: 14px;
                     }
@@ -310,6 +312,10 @@
                         li {
                             list-style-type: decimal;
                         }
+                    }
+
+                    p.description {
+                        margin-bottom: 12px;
                     }
                 }
             }
@@ -697,6 +703,21 @@
                                 margin-bottom: 0;
                             }
                         }
+                    }
+                }
+            }
+
+            .original_redesign_site {
+                .description {
+                    margin-bottom: 16px;
+                }
+
+                .key-enhancements {
+                    margin-bottom: 36px;
+
+                    .key-enhancement-title {
+                        margin-bottom: 16px;
+                        font-weight: 700;
                     }
                 }
             }

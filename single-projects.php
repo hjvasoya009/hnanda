@@ -147,6 +147,9 @@ get_header();
                             </div>
                             <div class="the-brief-questions">
                                 <h3>How Might We Questions</h3>
+                                <?php if($briefGroup2['how_might_questions_description']) { ?>
+                                <p class="description"><?= $briefGroup2['how_might_questions_description'] ?></p>
+                                <?php } ?>
                                 <ul class="list-items">
                                     <?php
                                     $questions = $briefGroup2['questions'];
@@ -592,6 +595,43 @@ get_header();
                 }
                 ?>
 
+                <!-- Key Components -->
+                <?php
+                $researchInsights = get_field('key_components');
+                if ($researchInsights['show_key_components'] == true) {
+                ?>
+                    <div class="research-group-1 key_components bg<?= $researchInsights['background'] ?> section-padding">
+                        <img class="mobile-only" src="<?= $researchInsights['image']['url'] ?>" alt="<?= $researchInsights['image']['title'] ?>" />
+                        <div class="max-width">
+                            <div class="research-content">
+                                <div>
+                                    <h3 class="research-content-title"><?= $researchInsights['title'] ?></h3>
+                                    <?php if ($researchInsights['description'] != '') { ?>
+                                        <p class="research-content-description"><?= $researchInsights['description'] ?></p>
+                                    <?php } ?>
+                                    <?php if ($researchInsights['content'] != '') { ?>
+                                    <div class="research-group-1-grid">
+                                        <ul class="list-items">
+                                            <?php
+                                            $items = $researchInsights['content'];
+                                            foreach ($items as $item) {
+                                            ?>
+                                                <li><?= $item['item'] ?></li>
+                                            <?php
+                                            }
+                                            ?>
+                                        </ul>
+                                    </div>
+                                    <?php } ?>
+                                </div>
+                                <img class="desktop-only" src="<?= $researchInsights['image']['url'] ?>" alt="<?= $researchInsights['image']['title'] ?>" />
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                    }
+                ?>
+
                 <?php
                 $prototype = get_field('prototype');
                 if ($prototype['content'] != '') {
@@ -599,7 +639,13 @@ get_header();
                     <div class="final-design-prototype bg<?= $prototype['background'] ?> section-padding">
                         <div class="max-width">
                             <div class="problem-content">
-                                <h3>Prototype</h3>
+                                <h3>
+                                    <?php if($prototype['title']) { ?>
+                                        <?= $prototype['title'] ?>
+                                    <?php } else { ?>
+                                        Prototype
+                                    <?php } ?>
+                                </h3>
                                 <p><?= $prototype['content'] ?></p>
                                 <?php
                                 if ($prototype['prototype_file']['type'] == 'image') {
@@ -608,14 +654,23 @@ get_header();
                                 <?php
                                 } else if ($prototype['prototype_file']['type'] == 'video') {
                                 ?>
-                                    <video controls="" controlslist="nodownload">
+                                    <video controls autoplay muted playsinline loop controlslist="nodownload">
                                         <source src="<?= $prototype['prototype_file']['url'] ?>" type="<?= $prototype['prototype_file']['mime_type'] ?>">
                                         Your browser does not support HTML5 video.
                                     </video>
                                 <?php
                                 }
                                 ?>
-
+                                <?php
+                                if ($prototype['video']['type'] == 'video') {
+                                ?>
+                                    <video controls autoplay muted playsinline loop controlslist="nodownload">
+                                        <source src="<?= $prototype['video']['url'] ?>" type="<?= $prototype['video']['mime_type'] ?>">
+                                        Your browser does not support HTML5 video.
+                                    </video>
+                                <?php
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -635,6 +690,122 @@ get_header();
                 <?php
                 }
                 ?>
+            </div>
+        <?php
+        }
+        ?>
+
+        <!-- The Original /Redesign Site -->
+        <?php
+        if (get_field("show_original_redesign_site_section") == true) {
+        ?>
+            <div id="original_redesign_site" class="original_redesign_site tab-section">
+                <?php
+                if (get_field("original_site_image")) {
+                ?>
+                    <div class="original_redesign_site-group bggrey section-padding">
+                        <div class="max-width original_redesign_site-group-grid">
+                            <div class="original_redesign_site-content">
+                                <h3>The Original Site</h3>
+                                <?php
+                                if (get_field("original_site_image")['type'] == 'image') {
+                                ?>
+                                    <img src="<?= get_field("original_site_image")['url'] ?>" alt="<?= get_field("original_site_image")['title'] ?>" />
+                                <?php
+                                } else if (get_field("original_site_image")['type'] == 'video') {
+                                ?>
+                                    <video controls autoplay muted playsinline loop controlslist="nodownload">
+                                        <source src="<?= get_field("original_site_image")['url'] ?>" type="<?= get_field("original_site_image")['mime_type'] ?>">
+                                        Your browser does not support HTML5 video.
+                                    </video>
+                                <?php
+                                }
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                }
+                ?>
+
+                <?php
+                if (get_field("redesign_image")) {
+                ?>
+                    <div class="original_redesign_site-group section-padding">
+                        <div class="max-width original_redesign_site-group-grid">
+                            <div class="original_redesign_site-content">
+                                <h3>The Redesign</h3>
+                                <?php
+                                if (get_field("redesign_image")['type'] == 'image') {
+                                ?>
+                                    <img src="<?= get_field("redesign_image")['url'] ?>" alt="<?= get_field("redesign_image")['title'] ?>" />
+                                <?php
+                                } else if (get_field("redesign_image")['type'] == 'video') {
+                                ?>
+                                    <video controls autoplay muted playsinline loop controlslist="nodownload">
+                                        <source src="<?= get_field("redesign_image")['url'] ?>" type="<?= get_field("redesign_image")['mime_type'] ?>">
+                                        Your browser does not support HTML5 video.
+                                    </video>
+                                <?php
+                                }
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                }
+                ?>
+
+                <?php
+                    $site_enhancements = get_field('site_enhancements');
+                    foreach ($site_enhancements as $site_enhancement) {
+                ?>
+                        <div class="original_redesign_site-group section-padding">
+                            <div class="max-width original_redesign_site-group-grid">
+                                <div class="original_redesign_site-content">
+                                    <h3 class="title"><?= $site_enhancement['title'] ?></h3>
+                                    <p class="description"><?= $site_enhancement['description'] ?></p>
+                                <?php
+                                    $key_enhancements = $site_enhancement['key_enhancements'];
+                                    if (count($key_enhancements) > 0) {
+                                ?>
+                                    <div class="key-enhancements">
+                                        <p class="key-enhancement-title">Key Enhancements:</p>
+                                        <ul class="list-items">
+                                        <?php
+                                            foreach ($key_enhancements as $key_enhancement) {
+                                        ?>
+                                                <li><?= $key_enhancement['enhancement'] ?></li>
+                                        <?php
+                                            }
+                                        ?>
+                                        </ul>
+                                    </div>
+                                <?php
+                                    }
+                                ?>
+                                    
+                                    <?php
+                                    if ($site_enhancement['video']['type'] == 'image') {
+                                    ?>
+                                        <img src="<?= $site_enhancement['video']['url'] ?>" alt="<?= $site_enhancement['video']['title'] ?>" />
+                                    <?php
+                                    } else if ($site_enhancement['video']['type'] == 'video') {
+                                    ?>
+                                        <video controls autoplay muted playsinline loop controlslist="nodownload">
+                                            <source src="<?= $site_enhancement['video']['url'] ?>" type="<?= $site_enhancement['video']['mime_type'] ?>">
+                                            Your browser does not support HTML5 video.
+                                        </video>
+                                    <?php
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                <?php
+                    }
+                ?>
+
             </div>
         <?php
         }
@@ -687,23 +858,23 @@ get_header();
         <!-- Takeaways -->
         <?php
         if (get_field("show_takeaways") == true) {
+            $takeawaysGroup = get_field('takeaways_group');
         ?>
             <div id="takeaways" class="takeaways tab-section">
-                <?php
-                $takeawaysGroup = get_field('takeaways_group');
-                if ($takeawaysGroup['title'] != '') {
-                ?>
-                    <div class="takeaways-group bg<?= $takeawaysGroup['background'] ?> section-padding">
-                        <div class="max-width">
-                            <h2 class="tab-title"><?= $takeawaysGroup['title'] ?> 🎁</h2>
-                            <div class="takeaways-content">
-                                <p><?= $takeawaysGroup['content'] ?></p>
-                            </div>
+                <div class="takeaways-group bg<?= $takeawaysGroup['background'] ?> section-padding">
+                    <div class="max-width">
+                        <h2 class="tab-title">
+                        <?php if($takeawaysGroup['title']) { ?>
+                            <?= $takeawaysGroup['title'] ?> 🎁
+                        <?php } else { ?>
+                            Takeaways 🎁
+                        <?php } ?>    
+                        </h2>
+                        <div class="takeaways-content">
+                            <p><?= $takeawaysGroup['content'] ?></p>
                         </div>
                     </div>
-                <?php
-                }
-                ?>
+                </div>
             </div>
         <?php
         }

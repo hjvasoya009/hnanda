@@ -12,23 +12,17 @@
                         </div>
                     </div>
 
-                    <nav class="navbar-menu" aria-label="Primary">
-                        <div class="menu-primary-container">
-                            <ul id="menu-primary" class="menu-primary">
-                                <li class="menu-item <?= ($_SERVER['REQUEST_URI'] == '/') ? 'current-menu-item' : '' ?>">
-                                    <a href="/">work</a>
-                                </li>
-                                <li class="menu-item <?= ($_SERVER['REQUEST_URI'] == '/visual-design/') ? 'current-menu-item' : '' ?>">
-                                    <a href="/visual-design">visual design</a>
-                                </li>
-                                <li class="menu-item <?= ($_SERVER['REQUEST_URI'] == '/about/') ? 'current-menu-item' : '' ?>">
-                                    <a href="/about">about</a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="mailto:hiteshrinanda92@gmail.com">contact</a>
-                                </li>
-                            </ul>
-                        </div>
+                    <nav class="navbar-menu">
+                        <?php
+                        wp_nav_menu(array(
+                            'menu'              => 'Primary',
+                            'container_class'   => '',
+                            'theme_location'    => 'primary',
+                            'menu_class'        => 'menu-primary',
+                            'menu_id'            => 'menu-primary',
+                            'walker'            => new Menu_With_Description
+                        ));
+                        ?>
                     </nav>
 
                     <button class="navbar-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
@@ -36,24 +30,12 @@
                         <span></span>
                         <span></span>
                     </button>
-
-                    <!-- <nav class="navbar-menu">
-                        <?php
-                        // wp_nav_menu(array(
-                        //     'menu'              => 'Primary',
-                        //     'container_class'   => '',
-                        //     'theme_location'    => 'primary',
-                        //     'menu_class'        => 'menu-primary',
-                        //     'menu_id'            => 'menu-primary',
-                        //     'walker'            => new Menu_With_Description
-                        // ));
-                        ?>
-                    </nav> -->
+                    
                 </div>
             </div>
         </div>
-
     </div>
+
     <div class="mobile-menu-overlay" aria-hidden="true">
         <div class="mobile-menu__top">
             <span class="mobile-menu__brand">Hiteshri N</span>
@@ -63,20 +45,16 @@
             </button>
         </div>
         <div class="mobile-menu" role="menu">
-            <ul id="menu-primary" class="menu-primary">
-                <li class="menu-item <?= ($_SERVER['REQUEST_URI'] == '/') ? 'current-menu-item' : '' ?>">
-                    <a href="/">work</a>
-                </li>
-                <li class="menu-item <?= ($_SERVER['REQUEST_URI'] == '/visual-design/') ? 'current-menu-item' : '' ?>">
-                    <a href="/visual-design">visual design</a>
-                </li>
-                <li class="menu-item <?= ($_SERVER['REQUEST_URI'] == '/about/') ? 'current-menu-item' : '' ?>">
-                    <a href="/about">about</a>
-                </li>
-                <li class="menu-item">
-                    <a href="mailto:hiteshrinanda92@gmail.com">contact</a>
-                </li>
-            </ul>
+            <?php
+                wp_nav_menu(array(
+                    'menu'              => 'Primary',
+                    'container_class'   => '',
+                    'theme_location'    => 'primary',
+                    'menu_class'        => 'menu-primary',
+                    'menu_id'            => 'menu-primary',
+                    'walker'            => new Menu_With_Description
+                ));
+            ?>
         </div>
     </div>
 </header>
